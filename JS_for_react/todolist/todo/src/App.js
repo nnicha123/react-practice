@@ -26,6 +26,12 @@ state = {
     })
     }
   }
+  deleteItem = (key) => {
+    const filteredItems = this.state.items.filter(item => item.key !== key)
+    this.setState({
+      items:filteredItems
+    })
+  }
   handleInput = (e) =>{
     this.setState({
       currentItem:{
@@ -46,7 +52,8 @@ state = {
         <p>{this.state.items.text}</p>
                 
       </header>
-      <ListItems items={this.state.items}/>
+      <ListItems items={this.state.items}
+      deleteItem ={this.deleteItem}/>
     </div>
   );
  }
