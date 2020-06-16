@@ -1,0 +1,20 @@
+.list {
+    background-color: #bf07ac;
+    width: 300px;
+    height: 50px;
+    /* text-align: center; */
+    margin: 15px auto;
+    border-radius: 15px;
+    color: white;
+    font-size: 18px;
+}
+.list p{
+    /* padding: 10px; */
+    line-height: 0;
+}
+.spanClass{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px;
+}
