@@ -11,7 +11,8 @@ class Class1 extends React.Component {
     submit = (e) => {
         e.preventDefault();
         let move = [...this.state.data, this.state.text]
-        this.setState({ data: move,text:'' })
+        this.setState({ data: move,text:'' });
+        document.querySelector('input').value = '';
     }
     render() {
         let { name, age } = this.props;
