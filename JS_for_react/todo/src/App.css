@@ -47,3 +47,6 @@ ul li{
   display: flex;
   justify-content: center;
 }
+.checked:checked + .element-text{
+  text-decoration:line-through;
+}

@@ -4,14 +4,15 @@ class Class1 extends React.Component {
     state = {
         dataNew: '',
         count: 0,
-        removedCount:0,
+        removedCount: 0,
         color: true,
         textData: {
             text: '',
             key: ''
         },
         data: [],
-        removedData: []
+        removedData: [],
+        // toggle:false
     }
     submit = (e) => {
         e.preventDefault();
@@ -33,7 +34,10 @@ class Class1 extends React.Component {
     }
     reset = () => {
         this.setState({
-            count: 0
+            data: [],
+            count: 0,
+            removedData: [],
+            removedCount: 0
         })
     }
     toggleColor = () => {
@@ -41,7 +45,7 @@ class Class1 extends React.Component {
     }
     remove = (data) => {
         const newList = this.state.data.filter(el => el.key !== data.key)
-        this.setState({ data: newList, count: this.state.count - 1,removedCount:this.state.removedCount+1 });
+        this.setState({ data: newList, count: this.state.count - 1, removedCount: this.state.removedCount + 1 });
         const newRemoved = [...this.state.removedData, data];
         this.setState({ removedData: newRemoved })
     }
@@ -49,7 +53,14 @@ class Class1 extends React.Component {
         const newData = [...this.state.data, data]
         this.setState({ data: newData })
         const newRemovedList = this.state.removedData.filter(el => el.key !== data.key);
-        this.setState({ removedData: newRemovedList,removedCount:this.state.removedCount-1 });
+        this.setState({ removedData: newRemovedList, removedCount: this.state.removedCount - 1, count: this.state.count + 1 });
+    }
+
+    toggle = (index) => {
+        let arr = [...this.state.data]
+        arr = arr.map((obj, idx) => index === idx ? {...obj, toggle: !arr[index].toggle } : obj)
+        this.setState({ data: arr });
+        
     }
 
     render() {
@@ -58,25 +69,26 @@ class Class1 extends React.Component {
             <div className="Container">
                 <div className="divLeft">
                     {/* <div style={{ fontSize: "20px", color: "green" }}>Class component {this.props.name} {this.props.age}</div> */}
-                    <h1 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>Click me</h1>
+                    <h1 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>Data Items</h1>
                     <p>{this.state.dataNew}</p>
-                    <button onClick={this.add}>+</button>
-                    <button onClick={this.subtract}>-</button>
-                    <button onClick={this.reset}>Reset</button>
+                    {/* <button onClick={this.add}>+</button>
+                    <button onClick={this.subtract}>-</button> */}
+                    <button style={{ backgroundColor: this.state.color ? "tomato" : 'blue', color: this.state.color ? "black" : "white" }} onClick={this.reset}>Reset</button>
                     <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>{this.state.count}</h3>
                     <form onSubmit={this.submit}>
                         <input type="text" value={this.state.textData.text} onChange={e => { this.setState({ textData: { text: e.target.value, key: Date.now() } }) }} />
                         <ul>
-                            {this.state.data.map(element => <li className="listStyle" key={element.key}><span>{element.text}</span><span><button onClick={this.toggleColor} style={{ backgroundColor: this.state.color ? "tomato" : 'blue' }} onClick={() => this.remove(element)}>Remove</button></span></li>)}
+                            {this.state.data.map((element, index) => <li className="listStyle" key={element.key} ><span><input className="checked" type="checkbox" onClick={() => this.toggle(index)} /><span style={{ textDecoration: this.state.data[index].toggle ? "line-through" : "none" }}>{element.text}</span></span><span><button style={{ backgroundColor: this.state.color ? "tomato" : 'blue' ,color: this.state.color ? "black" : "white" }} onClick={() => this.remove(element)}>Remove</button></span></li>)}
                         </ul>
-                        <button type="submit" onSubmit={this.submit}>Submit</button>
+                        <button type="submit" onSubmit={this.submit} style={{backgroundColor: this.state.color? "tomato":"blue", color:this.state.color? "black":"white"}}>Submit</button>
+                        {/* <button type="button" onClick={this.monitorCount}>Monitor Count</button> */}
                     </form>
                 </div>
                 <div className="divRight">
                     <h1 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>Removed Items</h1>
                     <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>{this.state.removedCount}</h3>
                     <ul>
-                        {this.state.removedData.map(element => <li className="listStyle" key={element.key}><span>{element.text}</span><span><button onClick={this.toggleColor} style={{ backgroundColor: this.state.color ? "tomato" : 'blue' }} onClick={() => this.reverse(element)}>Reverse</button></span></li>)}
+                        {this.state.removedData.map(element => <li className="listStyle" key={element.key}><span>{element.text}</span><span><button onClick={this.toggleColor} style={{ backgroundColor: this.state.color ? "tomato" : 'blue', color: this.state.color? "black":"white" }} onClick={() => this.reverse(element)}>Reverse</button></span></li>)}
                     </ul>
                 </div>
             </div>
