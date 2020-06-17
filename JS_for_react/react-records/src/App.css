@@ -24,3 +24,17 @@ ul li{
   width: 200px;
   list-style-type: none;
 }
+.listStyle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.listStyle button{
+  font-size: 10px;
+  font-weight: bold;
+  box-shadow: none;
+  background-color: tomato;
+}
+.listStyle button:hover{
+  opacity: 0.5;
+}
