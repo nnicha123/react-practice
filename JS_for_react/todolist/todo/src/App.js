@@ -49,7 +49,7 @@ state = {
           <input type="text" placeholder="Enter task" value= {this.state.currentItem.text} onChange={this.handleInput}></input>
           <button type="submit">Add</button>
         </form>
-        <p>{this.state.items.text}</p>
+        {/* <p>{this.state.items.text}</p> */}
                 
       </header>
       <ListItems items={this.state.items}
