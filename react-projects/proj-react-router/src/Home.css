@@ -1,0 +1,16 @@
+.homeWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: column;
+}
+h1{
+    font-size: 50px;
+    color: tomato;
+}
+p{
+    color: tomato;
+    font-size: 24px;
+    font-weight: bold;
+}

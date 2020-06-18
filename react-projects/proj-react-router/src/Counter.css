@@ -1,0 +1,35 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.Counter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: max-content;
+    width: 30vw;
+    margin: 10px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.counterValue{
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    padding: 20px 30px;
+    margin-top: 20px;
+    font-weight: bolder;
+    color: tomato;
+    font-size: 24px;
+}
+button{
+    background-color: tomato;
+}
+.chooseValue{
+    margin:20px 0;
+    color: tomato;
+    background-color: white;
+    font-size: 24px;
+    font-weight: bolder;
+}

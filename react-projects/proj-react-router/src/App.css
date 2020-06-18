@@ -3,6 +3,26 @@
   display: flex;
   justify-content: center;
 }
+.wrap{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(73,79,82);
+  color: white;
+}
+.nav-links{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
 .rightSpan{
   margin-left: 10px;
 }
@@ -21,7 +41,7 @@ button:hover{
   cursor: pointer;
   transition: all 0.3s;
 }
-ul li{
+.listInput li{
   padding: 10px;
   margin: 5px;
   box-shadow: 0 1px 5px rgba(0,0,0,0.3);
@@ -34,7 +54,7 @@ ul li{
   align-items: center;
   max-width: 450px;
 }
-.rightListStyle{
+.listInput .rightListStyle{
   width: 200px;
 }
 

@@ -1,16 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import App1 from './App1';
 import Class1 from './ClassCom';
-
+import Nav from './Nav';
+import Home from './Home';
+import Counter from './Counter';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-    {/* <App1 data="Data" send="I am send" name="I am name"/> */}
-    <Class1 name="Nicha" age="24"/>
-    </div>
-
+    <Router>
+      <div>
+        {/* <App1 data="Data" send="I am send" name="I am name"/> */}
+        {/* <Class1 name="Nicha" age="24"/> */}
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/todo" component={Class1} />
+          <Route path="/calculator" component={Counter} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
