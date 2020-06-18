@@ -57,9 +57,11 @@ class Class1 extends React.Component {
     editElement = (element) => {
         const newData = [...this.state.data];
         const indextosplice = (newData.indexOf(element))
-        newData.splice(indextosplice, 1);
-        newData.splice(indextosplice, 0, this.state.editData);
-        this.setState({ data: newData, editData: { text: '', key: '' } })
+        if(this.state.editData.text.length){
+            newData.splice(indextosplice, 1);
+            newData.splice(indextosplice, 0, this.state.editData);
+            this.setState({ data: newData, editData: { text: '', key: '' } })
+        }
     }
     reverse = (data) => {
         const newData = [...this.state.data, data]
