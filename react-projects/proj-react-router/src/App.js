@@ -4,6 +4,7 @@ import Class1 from './ClassCom';
 import Nav from './Nav';
 import Home from './Home';
 import Counter from './Counter';
+import TestComp from './TestComp';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/todo" component={Class1} />
           <Route path="/calculator" component={Counter} />
+          <Route path="/sort" component={TestComp}/>
         </Switch>
       </div>
     </Router>

@@ -19,6 +19,9 @@ function Nav() {
                 <Link style={navStyle} to='/calculator'>
                     <li>Mini-Calculator</li>
                 </Link>
+                <Link style={navStyle} to='/sort'>
+                    <li>Swap Project</li>
+                </Link>
             </ul>
         </nav>
     )

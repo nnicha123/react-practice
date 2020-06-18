@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: flex-start;
+}
+button{
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 15px 30px;
+    background: tomato;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    outline: none;
+}
+button:hover{
+    background: rgba(255, 99, 71,0.3);
+    cursor: pointer;
+}
+.listUl{
+    display: flex;
+    list-style-type: none;
+    padding: 20px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+.listUl li{
+    padding: 10px 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.topElement{
+    width: 15px;
+    background-color: tomato;
+}
