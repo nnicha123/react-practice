@@ -3,8 +3,12 @@
   display: flex;
   justify-content: center;
 }
+.rightSpan{
+  margin-left: 10px;
+}
 
 button{
+  margin: 0 5px;
   padding: 10px 20px;
   font-size: 20px;
   border:none;
@@ -21,15 +25,20 @@ ul li{
   padding: 10px;
   margin: 5px;
   box-shadow: 0 1px 5px rgba(0,0,0,0.3);
-  width: 200px;
+  width: 500px;
   list-style-type: none;
 }
-.listStyle{
+.listStyle,.rightListStyle{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 450px;
 }
-.listStyle button{
+.rightListStyle{
+  width: 200px;
+}
+
+.listStyle button, .rightListStyle button{
   font-size: 10px;
   font-weight: bold;
   box-shadow: none;
