@@ -1,0 +1,47 @@
+#top-piece{
+    background-color: white;
+}
+#left-person{
+    animation: left-animate 3s alternate ease infinite;
+}
+/* #two-person{
+    animation: two-animate 3s alternate ease infinite;
+} */
+#third-piece,#second-piece,#bottom-piece,#top-piece{
+    animation: donut-drop 1s alternate ease infinite;
+}
+#top-piece{
+    animation-delay: 1s;
+}
+#second-piece{
+    animation-delay: 2s;
+}
+#third-piece{
+    animation-delay: 3s;
+}
+@keyframes left-animate{
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(-40px,-10px);
+    }
+}
+
+@keyframes two-animate{
+    from{
+        transform: translate(50px,0);
+    }
+    to{
+        transform: translate(0px,0px);
+    }
+}
+
+@keyframes donut-drop{
+    from{
+        transform: translate(0,-50px);
+    }
+    to{
+        transform: translate(0px,0px);
+    }
+}
