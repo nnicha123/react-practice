@@ -20,7 +20,7 @@ function Nav() {
                     <li>Mini-Calculator</li>
                 </Link>
                 <Link style={navStyle} to='/sort'>
-                    <li>Swap Project</li>
+                    <li>Sort Project</li>
                 </Link>
             </ul>
         </nav>

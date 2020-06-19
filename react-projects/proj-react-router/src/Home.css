@@ -14,3 +14,6 @@ p{
     font-size: 24px;
     font-weight: bold;
 }
+#top-piece{
+    transform: translate(-100%,-100%);
+}
