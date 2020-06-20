@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
 import Class1 from './ClassCom';
 import Nav from './Nav';
 import Home from './Home';
 import Counter from './Counter';
 import TestComp from './TestComp';
+import Calculator from './Calculator';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/todo" component={Class1} />
-          <Route path="/calculator" component={Counter} />
+          <Route path="/counter" component={Counter} />
+          <Route path="/calculator" component={Calculator}/>
           <Route path="/sort" component={TestComp}/>
         </Switch>
       </div>

@@ -29,12 +29,12 @@ export default class Counter extends Component {
                 <div className="wrapper">
                     <div className="Counter">
                         <button className="chooseValue" onClick={() => this.setState({ modOne: true })}>Value 1</button>
-                        <span><button onClick={this.reset}>Reset</button><button onClick={this.add}>+</button><button onClick={this.subtract}>-</button></span>
+                        <span><button className="buttonCount" onClick={this.reset}>Reset</button><button className="buttonCount" onClick={this.add}>+</button><button className="buttonCount" onClick={this.subtract}>-</button></span>
                         <div className="counterValue">{this.state.count_one}</div>
                     </div>
                     <div className="Counter">
                         <button className="chooseValue" onClick={() => this.setState({ modOne: false })}>Value 2</button>
-                        <span><button onClick={this.reset}>Reset</button><button onClick={this.add}>+</button><button onClick={this.subtract}>-</button></span>
+                        <span><button className="buttonCount" onClick={this.reset}>Reset</button><button className="buttonCount" onClick={this.add}>+</button><button className="buttonCount" onClick={this.subtract}>-</button></span>
                         <div className="counterValue">{this.state.count_two}</div>
                     </div>
                 </div>

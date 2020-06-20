@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component,useEffect,useState } from 'react';
 import './TestComp.css';
 
-export class TestComp extends Component {
+class TestComp extends Component {
     state = {
         arr: [4, 3, 2, 10, 12, 1, 5, 6,7,12,9],
         storeArr: [4, 3, 2, 10, 12, 1, 5, 6,7,12,9],
@@ -9,6 +9,15 @@ export class TestComp extends Component {
         secondCountIndex: 1,
         newCount: 1
     }
+
+    componentDidMount(){
+        this.interval = setInterval(this.bubbleSort,500)
+        console.log(this.interval)
+    }
+    componentWillUnmount(){
+        clearInterval(this.interval)
+    }
+
     bubbleSort = () => {
         let newArr = [...this.state.arr];
         console.log(this.state.countIndex, newArr.length)
@@ -44,7 +53,7 @@ export class TestComp extends Component {
     }
     render() {
         return (
-            <div className="container">
+            <div className="containerSort">
                 <ul className="listUl">
                     {this.state.arr.map((el, index) =>
                         <li key={index + 1}>

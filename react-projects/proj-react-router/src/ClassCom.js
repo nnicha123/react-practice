@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css'
+import './ClassCom.css'
 class Class1 extends React.Component {
     state = {
         dataNew: '',
@@ -83,27 +83,23 @@ class Class1 extends React.Component {
             <div className="wrap">
                 <div className="App Container">
                     <div className="divLeft">
-                        {/* <div style={{ fontSize: "20px", color: "green" }}>Class component {this.props.name} {this.props.age}</div> */}
                         <h1 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>Data Items</h1>
                         <p>{this.state.dataNew}</p>
-                        {/* <button onClick={this.add}>+</button>
-                    <button onClick={this.subtract}>-</button> */}
-                        <button style={{ backgroundColor: this.state.color ? "tomato" : 'blue', color: this.state.color ? "black" : "white" }} onClick={this.reset}>Reset</button>
+                        <button className="todoButton" style={{ backgroundColor: this.state.color ? "tomato" : 'blue', color: this.state.color ? "black" : "white" }} onClick={this.reset}>Reset</button>
                         <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>{this.state.count}</h3>
                         <form onSubmit={this.submit}>
-                            <input type="text" value={this.state.textData.text} onChange={(e) => { this.setState({ textData: { text: e.target.value, key: Date.now() } }) }} />
+                            <input className="inputTop" type="text" value={this.state.textData.text} onChange={(e) => { this.setState({ textData: { text: e.target.value, key: Date.now() } }) }} />
                             <ul className="listInput">
                                 {this.state.data.map((element, index) => <li className="listStyle" key={element.key} ><span><input className="checked" type="checkbox" onClick={() => this.toggle(index)} /><span className="todoText" style={{ textDecoration: this.state.data[index].toggle ? "line-through" : "none" }}>{element.text}</span></span>
                                     <span className="rightSpan">
                                         <span><button style={{ backgroundColor: this.state.color ? "tomato" : 'blue', color: this.state.color ? "black" : "white" }} onClick={() => this.remove(element)}>Remove</button></span>
                                         <span><button style={{ backgroundColor: this.state.color ? "tomato" : 'blue', color: this.state.color ? "black" : "white" }} onClick={() => this.editElement(element)}>Edit</button></span>
-                                        <span><input type="text" onChange={(e) => { this.setState({ editData: { text: e.target.value, key: Date.now() } }) }} /></span>
+                                        <span><input type="text" className="inputEdit" onChange={(e) => { this.setState({ editData: { text: e.target.value, key: Date.now() } }) }} /></span>
                                     </span>
                                 </li>
                                 )}
                             </ul>
                             <button type="submit" onSubmit={this.submit} style={{ backgroundColor: this.state.color ? "tomato" : "blue", color: this.state.color ? "black" : "white" }}>Submit</button>
-                            {/* <button type="button" onClick={this.monitorCount}>Monitor Count</button> */}
                         </form>
                     </div>
                     <div className="divRight">

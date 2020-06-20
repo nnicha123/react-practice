@@ -16,8 +16,11 @@ function Nav() {
                 <Link style={navStyle} to='/todo'>
                     <li>Todo</li>
                 </Link>
-                <Link style={navStyle} to='/calculator'>
-                    <li>Mini-Calculator</li>
+                <Link style={navStyle} to='./calculator'>
+                    Mini-Calculator
+                </Link>
+                <Link style={navStyle} to='/counter'>
+                    <li>Counter</li>
                 </Link>
                 <Link style={navStyle} to='/sort'>
                     <li>Sort Project</li>

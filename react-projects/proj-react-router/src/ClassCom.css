@@ -27,7 +27,7 @@ nav{
   margin-left: 10px;
 }
 
-button{
+.toodoButton{
   margin: 0 5px;
   padding: 10px 20px;
   font-size: 20px;
@@ -36,10 +36,23 @@ button{
   outline: none;
   background-color: white;
 }
-button:hover{
+.toodoButton:hover{
   box-shadow:  0 1px 5px rgba(0,0,0,0.6);
   cursor: pointer;
   transition: all 0.3s;
+}
+
+.inputEdit{
+  width: 100px;
+  height: 30px;
+  margin-left: 10px;
+}
+.inputTop,.inputEdit{
+  border: 1px solid rgb(206, 202, 202);
+  background-color: rgb(206, 202, 202);
+}
+.inputTop:focus, .inputEdit:focus{
+  outline: 1px solid rgb(216, 199, 199);
 }
 .listInput li{
   padding: 10px;
@@ -47,15 +60,17 @@ button:hover{
   box-shadow: 0 1px 5px rgba(0,0,0,0.3);
   width: 500px;
   list-style-type: none;
+  width: max-content;
 }
 .listStyle,.rightListStyle{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 450px;
+  max-width: max-content;
 }
 .listInput .rightListStyle{
-  width: 200px;
+  min-width: 200px;
+  max-width: max-content;
 }
 
 .listStyle button, .rightListStyle button{
@@ -63,6 +78,7 @@ button:hover{
   font-weight: bold;
   box-shadow: none;
   background-color: tomato;
+  margin: 0 5px;
 }
 .listStyle button:hover{
   opacity: 0.5;
