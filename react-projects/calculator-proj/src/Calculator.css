@@ -1,0 +1,40 @@
+.container{
+    background-color: tomato;
+    margin-top: 30px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+input{
+    height: 50px;
+    grid-column: span 4;
+    padding: 20px;
+    font-size: 30px;
+    color: grey;
+    font-weight: bolder;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+
+}
+.clear{
+    grid-column: span 3;
+}
+button{
+    font-size: 30px;
+    color:grey;
+    padding: 20px 20px;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    outline: none;
+}
+button:hover{
+    background-color: rgb(216, 215, 215);
+    cursor: pointer;
+}
+.operator{
+    background-color: rgb(241, 0, 101);
+    color: whitesmoke;
+}
+.operator:hover{
+    background-color:  rgba(241, 0, 101,0.3);
+}
