@@ -83,7 +83,7 @@ class Class1 extends React.Component {
             <div className="wrap">
                 <div className="App Container">
                     <div className="divLeft">
-                        <h1 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>Data Items</h1>
+                        <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>Data Items</h3>
                         <p>{this.state.dataNew}</p>
                         <button className="todoButton" style={{ backgroundColor: this.state.color ? "tomato" : 'blue', color: this.state.color ? "black" : "white" }} onClick={this.reset}>Reset</button>
                         <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>{this.state.count}</h3>
@@ -103,7 +103,7 @@ class Class1 extends React.Component {
                         </form>
                     </div>
                     <div className="divRight">
-                        <h1 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>Removed Items</h1>
+                        <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>Removed Items</h3>
                         <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>{this.state.removedCount}</h3>
                         <ul className="listInput">
                             {this.state.removedData.map(element => <li className="rightListStyle" key={element.key}><span>{element.text}</span><span><button onClick={this.toggleColor} style={{ backgroundColor: this.state.color ? "tomato" : 'blue', color: this.state.color ? "black" : "white" }} onClick={() => this.reverse(element)}>Reverse</button></span></li>)}
