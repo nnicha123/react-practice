@@ -34,9 +34,7 @@
     justify-content: space-between;
     list-style-type: none;
 }
-.bigWeatherList li{
-    /* padding: 0 20px; */
-}
+
 .smallCards{
     display: flex;
 }
