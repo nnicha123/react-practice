@@ -1,0 +1,20 @@
+.currentContainer{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+.currentList{
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 40px;
+    background-color: white;
+}
+.currentList li{
+    list-style-type: none;
+}

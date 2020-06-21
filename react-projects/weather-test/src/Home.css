@@ -1,0 +1,60 @@
+.Home{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+    background: linear-gradient(120deg, #c7d2e4 0%, #090e38 100%);
+}
+h1{
+    margin: 0;
+    /* background-clip: text; */
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+}
+#Balloon{
+    animation: balloonUp 3s alternate infinite;
+    
+}
+#Star_4,#Star_3,#Star_2,#Star_1,#Star{
+    animation: starShine 3s alternate infinite;
+    transform-origin: bottom;
+    transform-box: fill-box;
+}
+#Star_4{
+    animation-delay: 1s;
+}
+#Star_2{
+    animation-delay: 2s;
+}
+#Star{
+    animation-delay: 3s;
+}
+#Star_1{
+    animation-delay: 4s;
+}
+@keyframes balloonUp {
+    from{
+        transform: translate(0,-100px);
+    }
+    to{
+        transform: translate(0,-80px);
+    }
+}
+@keyframes starShine {
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.2);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
