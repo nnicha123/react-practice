@@ -4,7 +4,7 @@
     align-items: center;
     padding-top: 50px;
     flex-direction: column;
-    background: linear-gradient(120deg, #c7d2e4 0%, #090e38 100%);
+    /* background: linear-gradient(120deg, #c7d2e4 0%, #090e38 100%); */
 }
 h1{
     margin: 0;
