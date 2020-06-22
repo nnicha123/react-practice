@@ -37,13 +37,6 @@ class Test extends Component {
             str = str + '<li>Icon</li>'
             i++
         }
-        function createElementFromHTML(htmlString) {
-            var div = document.createElement('div');
-            div.innerHTML = htmlString.trim();
-          
-            // Change this to div.childNodes to support multiple top-level nodes
-            return div.firstChild; 
-          }
         return (
             <div>
                 <li>Total Cases: {this.state.confirmed}</li>
