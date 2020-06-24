@@ -1,0 +1,55 @@
+.outerTimerWrap{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.sessionTime h3{
+    color: white;
+}
+
+.subtractTime,.addTime{
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    background-color: rgb(189, 58, 58);
+    color: white;
+}
+.inputTime{
+    border: none;
+    text-align: center;
+    width: 50px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+.startTimer,.stopTimer{
+    margin-top: 30px;
+    background-color: rgb(70, 194, 70);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+}
+.PomodoroWrap{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 10px solid rgb(189, 58, 58);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(circle at center, rgb(230, 221, 100) 0, rgb(243, 135, 47) 100%)
+}
+.timerButtons{
+    display: flex;
+}
+.timerButtons button{
+    margin: 20px 5px;
+}
+.timerButtons button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
