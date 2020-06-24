@@ -83,9 +83,9 @@ class Class1 extends React.Component {
             <div className="wrap">
                 <div className="App Container">
                     <div className="divLeft">
-                        <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>Data Items</h3>
+                        <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' ,fontSize:'30px'}}>Data Items</h3>
                         <p>{this.state.dataNew}</p>
-                        <button className="todoButton" style={{ backgroundColor: this.state.color ? "tomato" : 'blue', color: this.state.color ? "black" : "white" }} onClick={this.reset}>Reset</button>
+                        <button className="todoButton" style={{ backgroundColor: this.state.color ? "tomato" : 'blue', color: this.state.color ? "black" : "white" ,padding:'10px 0'}} onClick={this.reset}>Reset</button>
                         <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>{this.state.count}</h3>
                         <form onSubmit={this.submit}>
                             <input className="inputTop" type="text" value={this.state.textData.text} onChange={(e) => { this.setState({ textData: { text: e.target.value, key: Date.now() } }) }} />
@@ -99,11 +99,11 @@ class Class1 extends React.Component {
                                 </li>
                                 )}
                             </ul>
-                            <button type="submit" onSubmit={this.submit} style={{ backgroundColor: this.state.color ? "tomato" : "blue", color: this.state.color ? "black" : "white" }}>Submit</button>
+                            <button type="submit" onSubmit={this.submit} style={{ backgroundColor: this.state.color ? "tomato" : "blue", color: this.state.color ? "black" : "white",display:'center',padding:'10px 0' }}>Submit</button>
                         </form>
                     </div>
                     <div className="divRight">
-                        <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>Removed Items</h3>
+                        <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' ,fontSize:'30px' }}>Removed Items</h3>
                         <h3 onClick={this.toggleColor} style={{ color: this.state.color ? "tomato" : 'blue' }}>{this.state.removedCount}</h3>
                         <ul className="listInput">
                             {this.state.removedData.map(element => <li className="rightListStyle" key={element.key}><span>{element.text}</span><span><button onClick={this.toggleColor} style={{ backgroundColor: this.state.color ? "tomato" : 'blue', color: this.state.color ? "black" : "white" }} onClick={() => this.reverse(element)}>Reverse</button></span></li>)}
