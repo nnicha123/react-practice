@@ -4,14 +4,20 @@ import './Timer.css'
 function Timer() {
     const [timer, setTimer] = useState(10)
     const [count, setCount] = useState(10)
+    const [start,setStart] = useState(false)
     let interval;
-        useEffect(() => {
+        const startTimer = () => {
             interval = setInterval(() => {
                 setCount(count => count - 1);
             }, 1000);
-            return () => clearInterval(interval);
-        }, [count]);
+            // return (interval) => clearInterval(interval);
+        }
+        const stopTimer = () => {
 
+            return  setInterval(() => {setCount(0)})
+            // clearInterval(interval)
+        }
+ 
     return (
         <div className="outerTimerWrap">
             {/* <p>{count}</p> */}
@@ -33,8 +39,8 @@ function Timer() {
                     </div>
                 </div>
                 <div className="timerButtons">
-                    <button className="startTimer">Start</button>
-                    <button className="stopTimer" onClick={() => clearInterval(interval)}>Stop</button>
+                    <button className="startTimer" onClick={startTimer}>Start</button>
+                    <button className="stopTimer" onClick={stopTimer}>Stop</button>
                 </div>
             </div>
         </div>

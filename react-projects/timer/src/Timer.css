@@ -25,12 +25,14 @@
     font-weight: bold;
     font-size: 24px;
 }
-.startTimer,.stopTimer{
+.startTimer,.stopTimer,.resetTimer{
     margin-top: 30px;
     background-color: rgb(70, 194, 70);
     color: white;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border: none;
+    border-radius: 50%;
+    outline:none
 }
 .PomodoroWrap{
     width: 300px;
@@ -41,7 +43,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(circle at center, rgb(230, 221, 100) 0, rgb(243, 135, 47) 100%)
+    background-image: radial-gradient(circle at center, rgb(230, 221, 100) 0, rgb(243, 135, 47) 100%);
 }
 .timerButtons{
     display: flex;
