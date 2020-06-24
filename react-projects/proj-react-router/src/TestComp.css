@@ -5,7 +5,11 @@
     align-items: center;
     height: 100vh;
 }
-button{
+.buttonWrapper{
+    width: max-content;
+    display: flex;
+}
+.btnSort{
     margin-top: 15px;
     margin-left: 15px;
     padding: 15px 30px;

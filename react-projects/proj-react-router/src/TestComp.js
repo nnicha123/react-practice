@@ -62,9 +62,9 @@ class TestComp extends Component {
                         </li>)}
                 </ul>
                 <div className="buttonWrapper">
-                    <button onClick={this.bubbleSort}>Bubble</button>
-                    <button onClick={this.insertionSort}>Insertion</button>
-                    <button onClick={this.reset}>Reset</button>
+                    <button className="btnSort" onClick={this.bubbleSort}>Bubble</button>
+                    <button className="btnSort" onClick={this.insertionSort}>Insertion</button>
+                    <button className="btnSort" onClick={this.reset}>Reset</button>
                 </div>
             </div>
         )

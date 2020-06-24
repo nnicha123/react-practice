@@ -7,6 +7,7 @@ import Counter from './Counter';
 import TestComp from './TestComp';
 import Calculator from './Calculator';
 import Weather from './Weather';
+import Cards from './Cards';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/counter" component={Counter} />
           <Route path="/calculator" component={Calculator}/>
           <Route path="/weather" component={Weather}/>
+          <Route path="/cards" component={Cards}/>
           <Route path="/sort" component={TestComp}/>
         </Switch>
       </div>
