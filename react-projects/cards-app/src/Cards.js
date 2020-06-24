@@ -2,7 +2,28 @@ import React, { useState } from 'react'
 import './Cards.css'
 
 function Cards() {
-    const [card, setCard] = useState({ firstName: '', lastName: '', imageSrc: '', content: '', display: false })
+    const [card, setCard] = useState([
+        {
+          "userId": 1,
+          "firstName": "Krish",
+          "lastName": "Lee",
+          "phoneNumber": "123456",
+          "emailAddress": "krish.lee@learningcontainer.com"
+        },
+        {
+          "userId": 2,
+          "firstName": "racks",
+          "lastName": "jacson",
+          "phoneNumber": "123456",
+          "emailAddress": "racks.jacson@learningcontainer.com"
+        },
+        {
+          "userId": 3,
+          "firstName": "denial",
+          "lastName": "roast",
+          "phoneNumber": "33333333",
+          "emailAddress": "denial.roast@learningcontainer.com"
+        }])
 
     let submit = (e) => {
         e.preventDefault();
