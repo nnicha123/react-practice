@@ -8,6 +8,7 @@ import TestComp from './TestComp';
 import Calculator from './Calculator';
 import Weather from './Weather';
 import Cards from './Cards';
+import Quote from './Quote';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Nav />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/quotes" component={Quote}/>
           <Route path="/todo" component={Class1} />
           <Route path="/counter" component={Counter} />
           <Route path="/calculator" component={Calculator}/>
