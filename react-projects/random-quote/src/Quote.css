@@ -1,0 +1,68 @@
+.quoteBackground{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+.quoteWrapper{
+    box-shadow: 0 1px 10px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    padding: 30px;
+    height: max-content;
+    width: max-content;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.getQuoteButton{
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+.getQuoteButton:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+.mottoP{
+    font-size: 20px;
+    font-family: Tahoma;
+    font-weight: bold;
+}
+#marble{
+    background-color: blue;
+    animation: roll 2s linear infinite;
+    transform-origin: center;
+    transform-box: fill-box;  
+}
+#bird-2,#bird-2_2,#bird-2_3{
+    animation: fly 5s linear infinite;
+}
+#bird_2_2{
+    animation-delay: 2.5s;
+}
+
+@keyframes fly{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes roll{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
