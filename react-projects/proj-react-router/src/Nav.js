@@ -17,6 +17,9 @@ function Nav() {
                 <Link style={navStyle} to='/quotes'>
                     <li>Quotes</li>
                 </Link>
+                <Link style={navStyle} to='/timer'>
+                    <li>Timer</li>
+                </Link>
                 <Link style={navStyle} to='/todo'>
                     <li>Todo</li>
                 </Link>
