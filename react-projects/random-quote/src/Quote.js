@@ -7,7 +7,14 @@ class Quote extends Component {
             `Its never too late to be what you might've been`,
             `I aspire to inspire before I expire`,
             `No pain no gain`,
-            `I want to be all that I am capable of becoming`
+            `I want to be all that I am capable of becoming`,
+            `The way to get started is to quit talking and begin doing.`,
+            `It's kind of fun to do the impossible.`,
+            `All our dreams can come true, if we have the courage to pursue them.`,
+            `When you're curious, you find lots of interesting things to do.`,
+            `The more you like yourself, the less you are like anyone else, which makes you unique.`,
+            `We keep moving forward, opening new doors, and doing new things, because we're curious and curiosity keeps leading us down new paths.`,
+            `When you believe in a thing, believe in it all the way, implicitly and unquestionable.`  
         ],
         quoteSelected: '',
         displayQuote: false
