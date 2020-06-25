@@ -38,7 +38,7 @@ function Cards() {
         <p className="content">{item.emailAddress}</p>
     </div>))
     return (
-        <div>
+        <div className="cardWrapOuter">
             <form onSubmit={submit} className="form-style">
                 <h2>Enter information to add items</h2>
                 <input type="text" value={newItem.firstName} onChange={e => setNewItem({ ...newItem, firstName: e.target.value })} placeholder="Enter first name" />

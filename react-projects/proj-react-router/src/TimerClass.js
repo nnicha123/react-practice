@@ -29,6 +29,7 @@ class TimerClass extends Component {
             <div className="outerTimerWrap" style={{ marginTop: '0' }}>
                 {/* <p>{session}</p> */}
                 <div className="innerWrapTimer">
+                    <div className="circleAlarm"></div>
                     <div className="PomodoroWrap">
                         <div className="sessionTime" style={{ paddingTop: '20px' }}>
                             <h3>Session Time</h3>
@@ -52,6 +53,7 @@ class TimerClass extends Component {
                             <button className="resetTimer" onClick={this.resetTimer}>Reset</button>
                         </div>
                     </div>
+                    <div className="circleAlarm-right"></div>
                 </div>
             </div>
         )
