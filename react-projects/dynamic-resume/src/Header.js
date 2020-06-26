@@ -3,6 +3,14 @@ import me from './me.jpg';
 import './style.css';
 
 class Header extends Component {
+    state = {
+        headerItems: [
+            { icon: 'fa fa-phone', info: '085-910-2653' },
+            { icon: 'fa fa-envelope', info: 'nicha_nga@hotmail.com' },
+            { icon: 'fa fa-map-marker', info: 'Bangkok, Thailand' },
+            { icon: 'fa fa-linkedin', info: 'LinkedIn' }
+        ]
+    }
     render() {
         return (
             <div class="header-wrapper">
@@ -11,31 +19,17 @@ class Header extends Component {
                         <h2>Nicha Ngamtweerat</h2>
                         <h3 style={{ color: '#FFD027', margin: '5px 0' }}>Electronics Engineer</h3>
                         <p>Electronics engineer with experiences in 2 different automobile companies as both a strategic planner
-                        and
-                    a software engineer. Strong expertise in engineering but also in the management sector.</p>
+                        and a software engineer. Strong expertise in engineering but also in the management sector.</p>
                     </div>
                     <div className="head-right">
                         <img src={me} alt="logo" />
                     </div>
                 </div>
                 <div className="head-bottom">
-                    <div className="header-items">
-                        <div><i className="fa fa-phone" aria-hidden="true" style={{color: 'white',marginRight: '5px'}}></i></div>
-                        <div className="info">085-910-2653</div>
-                    </div>
-                    <div className="header-items">
-                        <div><i className="fa fa-envelope" aria-hidden="true" style={{color: 'white',marginRight: '5px'}}></i></div>
-                        <div className="info">nicha_nga@hotmail.com</div>
-                    </div>
-                    <div className="header-items">
-                        <div><i className="fa fa-map-marker" aria-hidden="true" style={{color: 'white',marginRight: '5px'}}></i></div>
-                        <div className="info">Bangkok, Thailand</div>
-                    </div>
-                    <div className="header-items">
-                        <div><i className="fa fa-linkedin" aria-hidden="true" style={{color: 'white',marginRight: '5px'}}></i>
-                        </div>
-                        <div className="info">LinkedIn</div>
-                    </div>
+                    {this.state.headerItems.map(el => <div className="header-items">
+                        <div><i className={el.icon} aria-hidden="true" style={{ color: 'white', marginRight: '5px' }}></i></div>
+                        <div className="info">{el.info}</div>
+                    </div>)}
                 </div>
             </div>
         )
