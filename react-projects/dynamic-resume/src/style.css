@@ -95,7 +95,7 @@ img{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 100px;
-    background-image: linear-gradient(to right, #feada6 0%, #f5efef 100%);
+    background-image: linear-gradient(to left, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);    /* color: black; */
 }
 .title{
     margin-top: 20px;
