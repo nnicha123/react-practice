@@ -1,0 +1,246 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.428;
+}
+p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+h2{
+    font-size: 2rem;
+    margin: 0;
+    margin-bottom: 1.2rem;
+}
+h3{
+    font-size: 1.75rem;
+    margin: 0;
+    margin-bottom: 1.2rem;
+}
+h4{
+    font-size: 1.5rem;
+    margin:0;
+    margin-bottom: 0.8rem;
+    /* margin: 10px 0; */
+}
+h5{
+    font-size: 1.25rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+.header-wrapper{
+    background-color: rgb(25, 39, 51);
+    color: white;
+}
+.header-sunset{
+    background-image: linear-gradient(to left, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);    /* color: black; */
+    
+}
+.header-blue{
+    background-image: linear-gradient(to top, #330867   0%, #080111 100%);
+    color: white;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: 100px;
+    height: 200px;
+    padding: 30px 100px 30px 100px;
+}
+.head-right img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.head-bottom{
+    display:flex;
+    justify-content: center;
+    background-color: rgb(4, 6, 15);
+    padding: 10px 100px;
+}
+img{
+    border: 3px solid #FFD027;
+}
+.header-items{
+    display: flex;
+    margin-right: 20px;
+    color: white;
+}
+.edit-items{
+    display: flex;
+    margin-right: 20px;
+    background-color: tomato;
+}
+.content{
+    padding: 50px 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 100px;
+    
+}
+.content-blue{
+    padding: 50px 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 100px;
+    color: white;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+.content-sunset{
+    padding: 50px 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 100px;
+    background-image: linear-gradient(to right, #feada6 0%, #f5efef 100%);
+}
+.title{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.place {
+    font-weight: lighter;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+.date{
+    font-size: 1.1rem;
+}
+.skills{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.skillset{
+    display: flex;
+    flex-wrap: wrap;
+}
+.skillset li{
+    list-style-type: none;
+    padding: 5px 15px;
+    margin: 5px 5px;
+    border-radius: 5px;
+    background-color: #FFD027;
+}
+.skillset li:hover,.addSkillsButton:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.small-box{
+    display: flex;
+}
+.small-box div{
+    width: 10px;
+    height: 10px;
+    background-color: #FFD027;
+    margin: 5px;
+}
+.english{
+    display: flex;
+    justify-content: space-between;
+}
+.interest-items{
+    display: flex;
+    margin-right: 10px;
+    justify-content: space-between;
+}
+.interest{
+    display: flex;
+}
+.interest div{
+    margin-right: 5px;
+}
+.responsibility{
+    list-style-type: none;
+}
+.responsibility li{
+    position: relative;
+}
+.responsibility li::before{
+    display: block;
+    content: "•";
+    color: #FFD027;
+    position: absolute;
+    top: 0px;
+    left: -15px;
+}
+@media only screen and (max-width: 560px){
+    .skillSetAddable{
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+}
+@media only screen and (max-width: 767px){
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+        padding: 30px;
+    }
+    .head-bottom{
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+    }
+    .head-bottom > *{
+        padding: 5px 30px;
+    }
+    .interest-items{
+        display: flex;
+        flex-direction: column;
+    }
+    .interest-items > * {
+        margin-bottom: 10px;
+    }
+
+}
+@media only screen and (max-width:960px){
+    .content{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+}
+.addSkillsButton{
+    background-color:#c2a12b;
+    padding:8px;
+    color:white;
+    border:none;
+    border-radius: 4px;
+    outline: none;
+}
+.inputNewSkills{
+    height: 27px;
+    outline: none;
+    border: none;
+    background-color: #d6ca9d;
+}
+.skillSetAddable{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.DOMelements{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 40px;
+}
+.DOMelements span{
+    margin: 5px;
+}
+.toggleButton{
+    background-color: rgb(25, 39, 51);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+.DOMinput{
+    padding: 10px;
+}
