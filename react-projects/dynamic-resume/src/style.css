@@ -167,6 +167,38 @@ img{
     top: 0px;
     left: -15px;
 }
+.button,.button-sunset,.button-blue{
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+.button{
+    background-color: rgb(226, 220, 220);
+}
+.button-sunset{
+    background-image: linear-gradient(to left, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);    /* color: black; */
+}
+.button-blue{
+    background-image: linear-gradient(to right, #46b1b1 0%, #330867 100%);
+    color: white;
+}
+.button:hover,.button-sunset:hover,.button-blue:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+.buttonTop,.inputTop{
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+.inputTop:focus{
+    background-color: grey;
+}
+select{
+    padding: 10px;
+    border: none;
+    outline: none;
+}
 @media only screen and (max-width: 560px){
     .skillSetAddable{
         flex-direction: column;
@@ -200,7 +232,7 @@ img{
 
 }
 @media only screen and (max-width:960px){
-    .content{
+    .content,.content-blue,.content-sunset{
         display: flex;
         flex-direction: column;
         padding: 20px;

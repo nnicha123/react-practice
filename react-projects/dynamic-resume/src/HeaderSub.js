@@ -33,7 +33,8 @@ class HeaderSub extends Component {
     render() {
         return (
             <>
-                <input type="text" value={this.state.newValue} onChange={(e) => this.setState({ newValue: e.target.value })} /><button onClick={this.updateInfo}>{this.state.buttonTxt}</button>
+                <input type="text" value={this.state.newValue} onChange={(e) => this.setState({ newValue: e.target.value })} className="inputTop"/>
+                <button className="buttonTop" onClick={this.updateInfo}>{this.state.buttonTxt}</button>
                 <div className="header">
                     <div className="head-left">
                         <h2>Nicha Ngamtweerat</h2>

@@ -33,7 +33,7 @@ class Header extends Component {
     render() {
         return (
             <div class="header-wrapper">
-                <input type="text" value={this.state.newValue} onChange={(e) => this.setState({ newValue: e.target.value })} /><button onClick={this.updateInfo}>{this.state.buttonTxt}</button>
+                <input type="text" value={this.state.newValue} onChange={(e) => this.setState({ newValue: e.target.value })}/><button onClick={this.updateInfo}>{this.state.buttonTxt}</button>
                 <div className="header">
                     <div className="head-left">
                         <h2>Nicha Ngamtweerat</h2>
