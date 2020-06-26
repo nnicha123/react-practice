@@ -39,7 +39,6 @@ class App extends Component {
         <div className={this.state.classMode.content}>
           <ContentLeft />
           <ContentRight />
-          {this.state.mode}
           <div className="DOMelements">
             <label>
               Pick your favorite theme : 

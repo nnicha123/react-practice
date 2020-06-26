@@ -88,7 +88,7 @@ img{
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 100px;
     color: white;
-    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    background-image: linear-gradient(to left top, #30cfd0 0%, #330867 100%);
 }
 .content-sunset{
     padding: 50px 70px;
@@ -176,7 +176,7 @@ img{
     background-color: rgb(226, 220, 220);
 }
 .button-sunset{
-    background-image: linear-gradient(to left, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);    /* color: black; */
+    background-image: linear-gradient(to right, #f99185 0%, #cf556c 78%, #b12a5b 100%);    /* color: black; */
 }
 .button-blue{
     background-image: linear-gradient(to right, #46b1b1 0%, #330867 100%);
