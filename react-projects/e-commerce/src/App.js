@@ -4,9 +4,9 @@ import './App.css';
 import Nav from './Nav'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Home'
-import AboutUs from './AboutUs'
 import ContactUs from './ContactUs'
 import CheckOut from './CheckOut'
+import Login from './Login';
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route exact path="/aboutus" component={AboutUs}/>
           <Route exact path="/contactus" component={ContactUs}/>
+          <Route exact path="/login" component={Login}/>
           <Route exact path="/checkout" component={CheckOut}/>
         </Switch>
       </div>

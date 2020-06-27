@@ -12,14 +12,14 @@ class Nav extends Component {
                         <Link to='/'>
                             <li>Home</li>
                         </Link>
-                        <Link to='/aboutus'>
-                            <li>About Us</li>
-                        </Link>
-                        <Link to='/contactus'>
-                            <li>Contact Us</li>
+                        <Link to='/login'>
+                            <li>Login</li>
                         </Link>
                         <Link to='/checkout'>
                             <li>Checkout</li>
+                        </Link>
+                        <Link to='/contactus'>
+                            <li>Contact Us</li>
                         </Link>
                     </ul>
                 </nav>

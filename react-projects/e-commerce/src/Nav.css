@@ -5,8 +5,9 @@
     padding: 0 30px;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(19, 19, 44);
+    background: #490e24;
     color: white;
+    font-weight: bold;
 }
 .navEcommerce ul {
     display: flex;
