@@ -75,3 +75,37 @@
 .icons img{
     margin: 5px;
 }
+.temporaryDiv{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+.arrangeLikes{
+    display: flex;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    margin: 10px;
+}
+.favouriteStart{
+    display: flex;
+    align-items: center;
+}
+.arrangeLikes img{
+    width: 70px;
+    padding: 10px;
+}
+.favouriteEnd{
+    margin-right: 20px;
+    padding: 10px;
+    background-color: #490e24;
+    color: white;
+    font-weight: bold;
+}
+.favouriteEnd:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}

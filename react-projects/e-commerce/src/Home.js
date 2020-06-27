@@ -18,73 +18,84 @@ import location from './cakes/location.png'
 
 class Home extends Component {
     state = {
-        cakes : [
+        cakes: [
             {
-                image:cake1,
-                title:'The black wedding cake',
-                paragraph:'The most beautiful cake ever with chocolate and rose topped'
+                image: cake1,
+                title: 'The black wedding cake',
+                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
             },
             {
-                image:cake2,
-                title:'The pink jolly cupcake',
-                paragraph:'The most delicate pink cupcake ever made!'
+                image: cake2,
+                title: 'The pink jolly cupcake',
+                paragraph: 'The most delicate pink cupcake ever made!'
             },
             {
-                image:cake3,
-                title:'The chocolate drip cake',
-                paragraph:'Topped with sour raspberries and 3 icecream layers'
+                image: cake3,
+                title: 'The chocolate drip cake',
+                paragraph: 'Topped with sour raspberries and 3 icecream layers'
             },
             {
-                image:cake4,
-                title:'The icecream cone cake',
-                paragraph:'Sprinkled with joy and dripping with delicious jam'
+                image: cake4,
+                title: 'The icecream cone cake',
+                paragraph: 'Sprinkled with joy and dripping with delicious jam'
             },
             {
-                image:cake5,
-                title:'The black wedding cake',
-                paragraph:'The most beautiful cake ever with chocolate and rose topped'
+                image: cake5,
+                title: 'The black wedding cake',
+                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
             },
             {
-                image:cake6,
-                title:'The black wedding cake',
-                paragraph:'The most beautiful cake ever with chocolate and rose topped'
+                image: cake6,
+                title: 'The black wedding cake',
+                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
             },
             {
-                image:cake7,
-                title:'The black wedding cake',
-                paragraph:'The most beautiful cake ever with chocolate and rose topped'
+                image: cake7,
+                title: 'The black wedding cake',
+                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
             },
             {
-                image:cake8,
-                title:'The black wedding cake',
-                paragraph:'The most beautiful cake ever with chocolate and rose topped'
+                image: cake8,
+                title: 'The black wedding cake',
+                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
             },
             {
-                image:cake9,
-                title:'The black wedding cake',
-                paragraph:'The most beautiful cake ever with chocolate and rose topped'
+                image: cake9,
+                title: 'The black wedding cake',
+                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
             },
             {
-                image:cake10,
-                title:'The black wedding cake',
-                paragraph:'The most beautiful cake ever with chocolate and rose topped'
+                image: cake10,
+                title: 'The black wedding cake',
+                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
             },
             {
-                image:cake11,
-                title:'The black wedding cake',
-                paragraph:'The most beautiful cake ever with chocolate and rose topped'
+                image: cake11,
+                title: 'The black wedding cake',
+                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
             },
             {
-                image:cake12,
-                title:'The black wedding cake',
-                paragraph:'The most beautiful cake ever with chocolate and rose topped'
+                image: cake12,
+                title: 'The black wedding cake',
+                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
             },
         ],
-        try:false
+        liked: [],
+        likedBefore: false
     }
-    changeState = () => {
-        this.setState({try:true})
+    checkLike = (index) => {
+        this.setState({ likedBefore: true })
+        const likedItem = this.state.cakes[index]
+        const totalLiked = [...this.state.liked]
+        this.setState({ liked: [...this.state.liked, likedItem] })
+        console.log(likedItem)
     }
+    removeLike = (index) => {
+        const newLikes = [...this.state.liked].filter((el,idx) => idx !== index)
+        console.log(newLikes)
+        this.setState({liked:newLikes})
+    }
+
     render() {
         return (
             <div>
@@ -98,21 +109,33 @@ class Home extends Component {
                 </div>
                 <div className="products">
                     <div className="productCardWrapper">
-                        {this.state.cakes.map(cake => <div className="productCard">
-                        <img src={cake.image} alt="cake"/>
-                        <div className="title">{cake.title}</div>
-                        <p className="description">{cake.paragraph}</p>
-                        <div className="icons">
-                            <img style={{width:'auto',height:'20px'}} src={heart} onClick={this.changeState}/>
-                            <img style={{width:'auto',height:'20px'}} src={user}/>
-                            <img style={{width:'auto',height:'20px'}} src={location}/>
-                        </div>
+                        {this.state.cakes.map((cake, index) => <div className="productCard">
+                            <img src={cake.image} alt="cake" />
+                            <div className="title">{cake.title}</div>
+                            <p className="description">{cake.paragraph}</p>
+                            <div className="icons">
+                                <img style={{ width: 'auto', height: '20px' }} src={heart} onClick={() => this.checkLike(index)} />
+                                <img style={{ width: 'auto', height: '20px' }} src={user} />
+                                <img style={{ width: 'auto', height: '20px' }} src={location} />
+                            </div>
                         </div>)}
                     </div>
                 </div>
-                <div className="advertisementText" style={{textAlign:'center'}}>
+                <div className="advertisementText" style={{ textAlign: 'center' }}>
                     Hope you enjoyed the page!
                 </div>
+                {(this.state.likedBefore) && <div className="temporaryDiv">
+                    <h3>Favourites</h3>
+                    {this.state.liked.map((el,index) => <div className="arrangeLikes">
+                        <div className="favouriteStart">
+                            <img src={el.image} alt="cake" />
+                            <div>{el.title}</div>
+                        </div>
+                        <div className="favouriteEnd" onClick={() => this.removeLike(index)}>
+                            <div>Remove</div>
+                        </div>
+                    </div>)}
+                </div>}
             </div>
         )
     }
