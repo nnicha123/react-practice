@@ -18,6 +18,9 @@ class Nav extends Component {
                         <Link to='/checkout'>
                             <li>Checkout</li>
                         </Link>
+                        <Link to='/favourites'>
+                            <li>Favourites</li>
+                        </Link>
                         <Link to='/contactus'>
                             <li>Contact Us</li>
                         </Link>

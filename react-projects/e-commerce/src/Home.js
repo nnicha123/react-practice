@@ -79,7 +79,11 @@ class Home extends Component {
                 title:'The black wedding cake',
                 paragraph:'The most beautiful cake ever with chocolate and rose topped'
             },
-        ]
+        ],
+        try:false
+    }
+    changeState = () => {
+        this.setState({try:true})
     }
     render() {
         return (
@@ -99,7 +103,7 @@ class Home extends Component {
                         <div className="title">{cake.title}</div>
                         <p className="description">{cake.paragraph}</p>
                         <div className="icons">
-                            <img style={{width:'auto',height:'20px'}} src={heart}/>
+                            <img style={{width:'auto',height:'20px'}} src={heart} onClick={this.changeState}/>
                             <img style={{width:'auto',height:'20px'}} src={user}/>
                             <img style={{width:'auto',height:'20px'}} src={location}/>
                         </div>
