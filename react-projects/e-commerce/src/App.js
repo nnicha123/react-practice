@@ -16,43 +16,25 @@ class App extends Component {
     title: 'This is the title from the app page',
     message: 'Hello',
     unit: 'kg',
-    liked: [{ image: cake2,title: 'The pink jolly cupcake',paragraph: 'The most delicate pink cupcake ever made!'},
-    { image: cake3,title: 'The chocolate drip cake',paragraph: 'Topped with sour raspberries and 3 icecream layers'},
-    { image: cake4,title: 'The icecream cone cake',paragraph: 'Sprinkled with joy and dripping with delicious jam'},]
+    liked: []
   }
   changeUnit = (item) => this.setState({ unit: item })
   changeCake = (cake) => this.setState({ liked: cake })
-  returnData = (liked) => {
-    return (liked.map((el, index) => <div className="arrangeLikes">
-      <div className="favouriteStart">
-        <img src={el.image} alt="cake" style={{height:'60px',width:'60px'}}/>
-        <div>{el.title}</div>
-      </div>
-      <div className="favouriteEnd" onClick={() => this.removeLike(index)}>
-        <div>Remove</div>
-      </div>
-    </div>))
+  changeLikes = (likes) => {
+    this.setState({liked:likes})
   }
   render() {
     return (
-      // <div>
-      //   <Router>
-      //     <Switch>
-      //       <Route path='/test' render={() =><Test data={{ unit: this.state.unit, changeUnit: this.changeUnit }} cake={this.returnData(this.state.liked)} changeCake={this.changeCake}/>}/>
-      //       <Route path='/second' render={() => <Test2 changeCake={this.changeCake} liked={this.returnData(this.state.liked)}/>}/>
-      //     </Switch>
-      //   </Router>
-      // </div>
       <Router>
         <div className="App">
           <Nav />
           <Switch>
-            <Route exact path="/" render={() => (<Home />)} />
+            <Route exact path="/" render={() => (<Home data={{liked:this.state.liked,changeLikes:this.changeLikes}}/>)} />
             <Route exact path="/contactus" component={ContactUs} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/checkout" component={CheckOut} />
             <Route
-              exact path="/favourites" render={() => (<Favourites cake={this.returnData(this.state.liked)}/>)}/>
+              exact path="/favourites" render={() => (<Favourites cake={{liked:this.state.liked}}/>)}/>
           </Switch>
         </div>
       </Router>

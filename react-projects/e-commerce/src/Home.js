@@ -76,6 +76,7 @@ class Home extends Component {
                 <div className="advertisementText" style={{ textAlign: 'center' }}>
                     Hope you enjoyed the page!
                 </div>
+                <button onClick={() => this.props.data.changeLikes(this.state.liked)}>Click to update favourites</button>
                 {(this.state.likedBefore) && <div className="temporaryDiv">
                     <h3>Favourites</h3>
                     {this.state.liked.map((el,index) => <div className="arrangeLikes">
