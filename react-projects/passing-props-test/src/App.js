@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Child from './Child'
 import Childtwo from './Childtwo'
+import Nav from './Nav'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './Home'
 class App extends Component {
   state={
     unit:'kg'
@@ -10,11 +13,16 @@ class App extends Component {
   }
   render() {
     return (
+      <Router>
+        <Nav/>
       <div>
-        <h1>Pass props from child to parent</h1>
-        <Child data={{unit:this.state.unit,changeUnit:this.changeUnit}}/>
-        <Childtwo data={{unit:this.state.unit}}/>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route exact path='/childone' render={() => (<Child data={{unit:this.state.unit,changeUnit:this.changeUnit}}/>)}/>
+          <Route exact path='/childtwo' render={() => (<Childtwo data={{unit:this.state.unit}}/>)}/>
+        </Switch>
       </div>
+      </Router>
     )
   }
 }
