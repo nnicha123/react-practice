@@ -32,7 +32,7 @@ class Home extends Component {
             { image: cake11,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
             { image: cake12,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
         ],
-        liked: [],
+        liked: [{ image: cake12,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},],
         likedBefore: false
     }
     checkLike = (index) => {
@@ -46,9 +46,6 @@ class Home extends Component {
         const newLikes = [...this.state.liked].filter((el,idx) => idx !== index)
         console.log(newLikes)
         this.setState({liked:newLikes})
-    }
-    sendData = (props) => {
-        this.props.parentCallback("Hey there I am passing props from home!")
     }
 
     render() {

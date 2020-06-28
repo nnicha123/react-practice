@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import cake1 from './cakes/blackwedding.PNG'
 
 class Test2 extends Component {
     state = {
-        liked: []
+        liked: [{ image: cake1,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'}]
     }
 
     render() {

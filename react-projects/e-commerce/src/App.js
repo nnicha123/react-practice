@@ -39,7 +39,7 @@ class App extends Component {
       //   <Router>
       //     <Switch>
       //       <Route path='/test' render={() =><Test data={{ unit: this.state.unit, changeUnit: this.changeUnit }} cake={this.returnData(this.state.liked)} changeCake={this.changeCake}/>}/>
-      //       <Route path='/second' render={() => <Test2 changeCake={this.changeCake} cake={this.returnData(this.state.liked)}/>}/>
+      //       <Route path='/second' render={() => <Test2 changeCake={this.changeCake} liked={this.returnData(this.state.liked)}/>}/>
       //     </Switch>
       //   </Router>
       // </div>
