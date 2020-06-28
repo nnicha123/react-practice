@@ -16,9 +16,11 @@ class App extends Component {
     title: 'This is the title from the app page',
     message: 'Hello',
     unit: 'kg',
-    liked: []
+    liked: [],
+    checkOut:[]
   }
   changeUnit = (item) => this.setState({ unit: item })
+  changeCheckOut = (item) => this.setState({checkOut:item})
   changeCake = (cake) => this.setState({ liked: cake })
   changeLikes = (likes) => {
     this.setState({liked:likes})
@@ -29,10 +31,10 @@ class App extends Component {
         <div className="App">
           <Nav />
           <Switch>
-            <Route exact path="/" render={() => (<Home data={{liked:this.state.liked,changeLikes:this.changeLikes}}/>)} />
+            <Route exact path="/" render={() => (<Home data={{liked:this.state.liked,changeLikes:this.changeLikes}} checkOut={{checkout:this.state.checkOut,changeCheckOut:this.changeCheckOut}}/>)} />
             <Route exact path="/contactus" component={ContactUs} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/checkout" component={CheckOut} />
+            <Route exact path="/checkout" render={() => (<CheckOut checkOut={{checkout:this.state.checkOut}}/>)}/>
             <Route
               exact path="/favourites" render={() => (<Favourites cake={{liked:this.state.liked}}/>)}/>
           </Switch>

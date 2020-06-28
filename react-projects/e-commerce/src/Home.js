@@ -33,7 +33,8 @@ class Home extends Component {
             { image: cake12,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
         ],
         liked: [{ image: cake12,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},],
-        likedBefore: false
+        likedBefore: false,
+        checkOut:[]
     }
     checkLike = (index) => {
         this.setState({ likedBefore: true })
@@ -41,6 +42,10 @@ class Home extends Component {
         const totalLiked = [...this.state.liked]
         this.setState({ liked: [...this.state.liked, likedItem] })
         console.log(likedItem)
+    }
+    checkOutItem = (index) => {
+        const newCheckout = this.state.cakes[index]
+        this.setState({checkOut:[...this.state.checkOut,newCheckout]})
     }
     removeLike = (index) => {
         const newLikes = [...this.state.liked].filter((el,idx) => idx !== index)
@@ -68,7 +73,7 @@ class Home extends Component {
                             <div className="icons">
                                 <img style={{ width: 'auto', height: '20px' }} src={heart} onClick={() => this.checkLike(index)} />
                                 <img style={{ width: 'auto', height: '20px' }} src={user} />
-                                <img style={{ width: 'auto', height: '20px' }} src={location} />
+                                <img style={{ width: 'auto', height: '20px' }} src={location} onClick={() => this.checkOutItem(index)}/>
                             </div>
                         </div>)}
                     </div>
@@ -77,6 +82,7 @@ class Home extends Component {
                     Hope you enjoyed the page!
                 </div>
                 <button onClick={() => this.props.data.changeLikes(this.state.liked)}>Click to update favourites</button>
+                <button onClick={() => this.props.checkOut.changeCheckOut(this.state.checkOut)}>Click to update checkout</button>
                 {(this.state.likedBefore) && <div className="temporaryDiv">
                     <h3>Favourites</h3>
                     {this.state.liked.map((el,index) => <div className="arrangeLikes">
