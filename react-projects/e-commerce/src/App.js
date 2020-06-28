@@ -47,12 +47,12 @@ class App extends Component {
         <div className="App">
           <Nav />
           <Switch>
-            <Route exact path="/" render={() => (<Home cake={this.returnData(this.state.liked)} changeCake={this.changeCake} />)} />
+            <Route exact path="/" render={() => (<Home />)} />
             <Route exact path="/contactus" component={ContactUs} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/checkout" component={CheckOut} />
             <Route
-              exact path="/favourites" render={() => (<Favourites changeCake={this.changeCake} cake={this.returnData(this.state.liked)}/>)}/>
+              exact path="/favourites" render={() => (<Favourites cake={this.returnData(this.state.liked)}/>)}/>
           </Switch>
         </div>
       </Router>
