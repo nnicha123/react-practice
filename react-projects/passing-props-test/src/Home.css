@@ -1,0 +1,45 @@
+.outerCardWrap{
+    display: grid;
+    grid-template-columns: repeat(4,250px);
+    grid-gap: 20px 10px;
+    /* margin: 20px; */
+}
+.cakeCard{
+    width: 200px;
+    height: 350px;
+    padding: 20px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.cakeCard img{
+    width: 100%;
+    height: 200px;
+}
+.cardBottom button{
+    border: none;
+    background-color: pink;
+    padding: 10px 20px;
+}
+.cardBottom button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+.likedItems{
+    padding: 10px;
+    height: 60px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+.likedItems img{
+    height: 80%;
+    width: 50px;
+}
+.likedLeft{
+    display: flex;
+}
