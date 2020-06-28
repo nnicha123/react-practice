@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import './Timer.css'
-
+import TestPage from './TestPage'
 class TimerClass extends Component {
     state = {
         session: 0,
         break: 10
     }
-
 
     startTimer = () => {
         this.setState({ session: this.state.session })
@@ -26,8 +25,8 @@ class TimerClass extends Component {
     }
     render() {
         return (
-            <div className="outerTimerWrap" style={{ marginTop: '0' }}>
-                {/* <p>{session}</p> */}
+            <div className="outerTimerWrap" style={{ marginTop: '0' ,position:'relative'}}>
+                <TestPage style={{top:0,right:0}}/>
                 <div className="innerWrapTimer">
                     <div className="circleAlarm"></div>
                     <div className="PomodoroWrap">

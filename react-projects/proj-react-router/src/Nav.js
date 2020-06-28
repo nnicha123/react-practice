@@ -38,6 +38,9 @@ function Nav() {
                 <Link style={navStyle} to='/sort'>
                     <li>Sort Project</li>
                 </Link>
+                <Link style={navStyle} to='/testpage'>
+                    <li>Test Page</li>
+                </Link>
             </ul>
         </nav>
     )

@@ -11,6 +11,7 @@ import Cards from './Cards';
 import Quote from './Quote';
 import TimerClass from './TimerClass';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import TestPage from './TestPage';
 function App() {
   return (
     <Router>
@@ -28,6 +29,7 @@ function App() {
           <Route path="/weather" component={Weather}/>
           <Route path="/cards" component={Cards}/>
           <Route path="/sort" component={TestComp}/>
+          <Route path="/testpage" component={TestPage}/>
 
         </Switch>
       </div>
