@@ -19,66 +19,18 @@ import location from './cakes/location.png'
 class Home extends Component {
     state = {
         cakes: [
-            {
-                image: cake1,
-                title: 'The black wedding cake',
-                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
-            },
-            {
-                image: cake2,
-                title: 'The pink jolly cupcake',
-                paragraph: 'The most delicate pink cupcake ever made!'
-            },
-            {
-                image: cake3,
-                title: 'The chocolate drip cake',
-                paragraph: 'Topped with sour raspberries and 3 icecream layers'
-            },
-            {
-                image: cake4,
-                title: 'The icecream cone cake',
-                paragraph: 'Sprinkled with joy and dripping with delicious jam'
-            },
-            {
-                image: cake5,
-                title: 'The black wedding cake',
-                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
-            },
-            {
-                image: cake6,
-                title: 'The black wedding cake',
-                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
-            },
-            {
-                image: cake7,
-                title: 'The black wedding cake',
-                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
-            },
-            {
-                image: cake8,
-                title: 'The black wedding cake',
-                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
-            },
-            {
-                image: cake9,
-                title: 'The black wedding cake',
-                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
-            },
-            {
-                image: cake10,
-                title: 'The black wedding cake',
-                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
-            },
-            {
-                image: cake11,
-                title: 'The black wedding cake',
-                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
-            },
-            {
-                image: cake12,
-                title: 'The black wedding cake',
-                paragraph: 'The most beautiful cake ever with chocolate and rose topped'
-            },
+            { image: cake1,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
+            { image: cake2,title: 'The pink jolly cupcake',paragraph: 'The most delicate pink cupcake ever made!'},
+            { image: cake3,title: 'The chocolate drip cake',paragraph: 'Topped with sour raspberries and 3 icecream layers'},
+            { image: cake4,title: 'The icecream cone cake',paragraph: 'Sprinkled with joy and dripping with delicious jam'},
+            { image: cake5,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
+            { image: cake6,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
+            { image: cake7,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
+            { image: cake8,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
+            { image: cake9,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
+            { image: cake10,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
+            { image: cake11,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
+            { image: cake12,title: 'The black wedding cake',paragraph: 'The most beautiful cake ever with chocolate and rose topped'},
         ],
         liked: [],
         likedBefore: false
@@ -94,6 +46,9 @@ class Home extends Component {
         const newLikes = [...this.state.liked].filter((el,idx) => idx !== index)
         console.log(newLikes)
         this.setState({liked:newLikes})
+    }
+    sendData = (props) => {
+        this.props.parentCallback("Hey there I am passing props from home!")
     }
 
     render() {
