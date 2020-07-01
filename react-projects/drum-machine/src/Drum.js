@@ -7,7 +7,17 @@ import { Howl, Howler } from 'howler'
 
 class Drum extends Component {
     state = {
-        notes: [{ pad: 'A', sound: ASound }, { pad: 'B', sound: BSound }, { pad: 'C', sound: CSound }]
+        notes: [
+            { pad: 'Q', sound: ASound }, 
+            { pad: 'W', sound: BSound }, 
+            { pad: 'E', sound: CSound },
+            { pad: 'A', sound: CSound },
+            { pad: 'S', sound: ASound },
+            { pad: 'D', sound: CSound },
+            { pad: 'Z', sound: ASound },
+            { pad: 'X', sound: BSound },
+            { pad: 'C', sound: CSound },
+            { pad: 'P', sound: BSound }]
     }
 
     playAudio = (src) => {
@@ -19,9 +29,9 @@ class Drum extends Component {
     RenderButtonAndSound = () => {
         return (
             <div className="outside">
-                <div className="outerDrum">
-                    <ul className="drumLists">
-                        {this.state.notes.map((soundObj, index) => <li onClick={() => this.playAudio(soundObj.sound)}>{soundObj.pad}</li>)}
+                <div className="outerDrum" id="drum-machine">
+                    <ul className="drumLists" id="display">
+                        {this.state.notes.map((soundObj, index) => <li id={soundObj.pad} className="drum-pad" onClick={() => this.playAudio(soundObj.sound)}>{soundObj.pad}</li>)}
                     </ul>
                 </div>
             </div>

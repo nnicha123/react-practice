@@ -3,21 +3,28 @@
     padding: 0;
     background-color: rgb(252, 248, 248);
     height: 100vh;
+    width: 100vw;
     background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
 }
 .outerDrum{
     display: flex;
+    flex-wrap: wrap;
     height: 100vh;
     justify-content: center;
     align-items: center;
+}
+.outerDrum ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
 }
 .drumLists{
     display: flex;
 }
 .outerDrum ul li{
     list-style: none;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
     margin: 10px;
     box-shadow: 0 5px 5px rgba(0,0,0,0.3);
     background-color: rgb(235, 235, 235);
@@ -27,7 +34,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    border: 10px solid rgb(235, 234, 234);
+    border: 10px solid rgb(223, 182, 182);
 }
 .outerDrum ul li:hover{
     cursor: pointer;
@@ -35,4 +42,10 @@
     transform: scale(1.1);
     transition: all .1s;
     border-radius: 50%;
+}
+.drum-pad{
+    /* background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%); */
+        /* background-clip: text; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
