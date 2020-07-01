@@ -3,6 +3,7 @@
     padding: 0;
     background-color: rgb(252, 248, 248);
     height: 100vh;
+    background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
 }
 .outerDrum{
     display: flex;
@@ -17,19 +18,21 @@
     list-style: none;
     height: 100px;
     width: 100px;
-    margin: 5px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    margin: 10px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
     background-color: rgb(235, 235, 235);
     font-size: 50px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    border: 10px solid rgb(202, 196, 196);
+    border-radius: 20px;
+    border: 10px solid rgb(235, 234, 234);
 }
 .outerDrum ul li:hover{
-    background-color: rgb(224, 154, 154);
-    border: 10px solid rgb(223, 91, 91);
     cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.6);
+    transform: scale(1.1);
+    transition: all .1s;
+    border-radius: 50%;
 }
