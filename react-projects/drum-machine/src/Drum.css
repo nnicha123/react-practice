@@ -1,0 +1,35 @@
+.outside{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(252, 248, 248);
+    height: 100vh;
+}
+.outerDrum{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.drumLists{
+    display: flex;
+}
+.outerDrum ul li{
+    list-style: none;
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    background-color: rgb(235, 235, 235);
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 10px solid rgb(202, 196, 196);
+}
+.outerDrum ul li:hover{
+    background-color: rgb(224, 154, 154);
+    border: 10px solid rgb(223, 91, 91);
+    cursor: pointer;
+}
