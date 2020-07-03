@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+
+Button:hover{
+  opacity: 0.6;
+  background: maroon;
+}
