@@ -51,7 +51,7 @@ class Shopping extends Component {
         favourite: [],
         components: [true, true, true],
         total: 0,
-        valPrice:1
+        valPrice: 1
     }
 
     updateCheckout = (ind) => {
@@ -69,9 +69,9 @@ class Shopping extends Component {
         this.setState({ checkOut: [...this.state.checkOut, newItem] })
         this.setState({ total: this.state.total + this.state.bags[ind].price })
     }
-    deleteItem = (ind) =>{
-        const newList = [...this.state.checkOut].filter((el,index) => index !== ind)
-        this.setState({checkOut:[...newList]})
+    deleteItem = (ind) => {
+        const newList = [...this.state.checkOut].filter((el, index) => index !== ind)
+        this.setState({ checkOut: [...newList] })
         this.setState({ total: this.state.total - this.state.checkOut[ind].price })
     }
 
@@ -143,12 +143,12 @@ class Shopping extends Component {
                                 <img src={el.image} />
                                 <div>{el.title}</div>
                             </div>
-                            <div className="checkOutQuantity" style={{display:'flex'}}>
-                                <button>+</button>
-                                <input type="Number" style={{width:"20px"}} value={this.state.valPrice} onChange={(e) => {this.setState({valPrice:e.target.value,total: this.state.total + this.state.valPrice*el.price})}}/>
+                            <div className="checkOutQuantity" style={{ display: 'flex' }}>
+                                <button onClick={() => this.setState({valPrice:this.state.valPrice+1})}>+</button>
+                                <div style={{ width: "30px",paddingLeft:"5px" }} >{this.state.valPrice}</div>
                             </div>
                             <div className="checkOutRight" >
-                                <div>${el.price*this.state.valPrice}</div>
+                                <div>${el.price * this.state.valPrice}</div>
                                 <Button icon={<DeleteFilled style={{ fontSize: '20px' }} />} style={{ color: 'maroon', background: 'white', border: 'none' }} onClick={() => this.deleteItem(index)}></Button>
                             </div>
                         </div>)}
@@ -158,6 +158,7 @@ class Shopping extends Component {
                         </div>
                     </div>
                 </div>
+                <footer></footer>
             </div>
         )
     }

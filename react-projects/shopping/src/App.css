@@ -4,3 +4,7 @@
   /* grid-column-gap: 20px; */
   grid-template-columns: 70% 30%;
 }
+footer{
+  height: 50px;
+  background-color: rgb(85, 14, 14);
+}
