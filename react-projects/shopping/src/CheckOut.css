@@ -32,4 +32,6 @@
 .checkOutRight{
     font-weight: bold;
     display: flex;
+    width: 115px;
+    justify-content: space-between;
 }

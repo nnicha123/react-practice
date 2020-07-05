@@ -22,7 +22,11 @@
     padding: 10px;
     padding-bottom: 0;
 }
-Button:hover{
+Button{
+    outline: none;
+}
+
+Button:hover,Button:focus{
     opacity: 0.6;
     cursor: pointer;
 }

@@ -27,26 +27,26 @@ import bag5 from './bags/doctor-navy.jpg'
 import bag6 from './bags/doctor-black.jpg'
 class Shopping extends Component {
     state = {
-        cakes: [{ image: cake1, title: 'The black wedding cake', price: 30 },
-        { image: cake2, title: 'The pink jolly cupcake', price: 10 },
-        { image: cake3, title: 'The chocolate drip cake', price: 35 },
-        { image: cake4, title: 'The icecream cone cake', price: 25 },
-        { image: cake5, title: 'The blue wedding cake', price: 41 },
-        { image: cake6, title: 'The pink tall cake', price: 21 },
-        { image: cake7, title: 'Colorful Macaroons', price: 15 },
-        { image: cake8, title: 'Orange fruit cake', price: 16 }],
-        games: [{ image: game1, title: 'Adventurous Railway', price: 30 },
-        { image: game2, title: 'Sammy Suafeas', price: 10 },
-        { image: game3, title: 'Logical thinking game', price: 35 },
-        { image: game4, title: 'Train disaster', price: 25 },
-        { image: game5, title: 'Drop the balls', price: 41 },
-        { image: game6, title: 'Exciting pinballs', price: 21 }],
-        bags: [{ image: bag1, title: 'Black and Red Tulip', price: 30 },
-        { image: bag2, title: 'Sweet Pink Tulip', price: 10 },
-        { image: bag3, title: 'Natural Yellow Tulip', price: 35 },
-        { image: bag4, title: "Doctor's Maroon", price: 25 },
-        { image: bag5, title: "Doctor's Navy", price: 41 },
-        { image: bag6, title: "Doctor's Black", price: 21 }],
+        cakes: [{ image: cake1, title: 'The black wedding cake', price: 30, quantity: 1, totalPrice: 0 },
+        { image: cake2, title: 'The pink jolly cupcake', price: 10, quantity: 1, totalPrice: 0 },
+        { image: cake3, title: 'The chocolate drip cake', price: 35, quantity: 1, totalPrice: 0 },
+        { image: cake4, title: 'The icecream cone cake', price: 25, quantity: 1, totalPrice: 0 },
+        { image: cake5, title: 'The blue wedding cake', price: 41, quantity: 1, totalPrice: 0 },
+        { image: cake6, title: 'The pink tall cake', price: 21, quantity: 1, totalPrice: 0 },
+        { image: cake7, title: 'Colorful Macaroons', price: 15, quantity: 1, totalPrice: 0 },
+        { image: cake8, title: 'Orange fruit cake', price: 16, quantity: 1, totalPrice: 0 }],
+        games: [{ image: game1, title: 'Adventurous Railway', price: 30, quantity: 1, totalPrice: 0 },
+        { image: game2, title: 'Sammy Suafeas', price: 10, quantity: 1, totalPrice: 0 },
+        { image: game3, title: 'Logical thinking game', price: 35, quantity: 1, totalPrice: 0 },
+        { image: game4, title: 'Train disaster', price: 25, quantity: 1, totalPrice: 0 },
+        { image: game5, title: 'Drop the balls', price: 41, quantity: 1, totalPrice: 0 },
+        { image: game6, title: 'Exciting pinballs', price: 21, quantity: 1, totalPrice: 0 }],
+        bags: [{ image: bag1, title: 'Black and Red Tulip', price: 30, quantity: 1, totalPrice: 0 },
+        { image: bag2, title: 'Sweet Pink Tulip', price: 10, quantity: 1, totalPrice: 0 },
+        { image: bag3, title: 'Natural Yellow Tulip', price: 35, quantity: 1, totalPrice: 0 },
+        { image: bag4, title: "Doctor's Maroon", price: 25, quantity: 1, totalPrice: 0 },
+        { image: bag5, title: "Doctor's Navy", price: 41, quantity: 1, totalPrice: 0 },
+        { image: bag6, title: "Doctor's Black", price: 21, quantity: 1, totalPrice: 0 }],
         checkOut: [],
         favourite: [],
         components: [true, true, true],
@@ -55,24 +55,37 @@ class Shopping extends Component {
     }
 
     updateCheckout = (ind) => {
-        const newItem = this.state.cakes[ind]
+        let newItem = this.state.cakes[ind]
+        newItem.quantity = 1
         this.setState({ checkOut: [...this.state.checkOut, newItem] })
         this.setState({ total: this.state.total + this.state.cakes[ind].price })
     }
     updateCheckoutGames = (ind) => {
-        const newItem = this.state.games[ind]
+        let newItem = this.state.games[ind]
+        newItem.quantity = 1
         this.setState({ checkOut: [...this.state.checkOut, newItem] })
         this.setState({ total: this.state.total + this.state.games[ind].price })
     }
     updateCheckoutBags = (ind) => {
-        const newItem = this.state.bags[ind]
+        let newItem = this.state.bags[ind]
+        newItem.quantity = 1
         this.setState({ checkOut: [...this.state.checkOut, newItem] })
         this.setState({ total: this.state.total + this.state.bags[ind].price })
     }
     deleteItem = (ind) => {
         const newList = [...this.state.checkOut].filter((el, index) => index !== ind)
         this.setState({ checkOut: [...newList] })
-        this.setState({ total: this.state.total - this.state.checkOut[ind].price })
+        this.setState({ total: this.state.total - this.state.checkOut[ind].price*this.state.checkOut[ind].quantity })
+    }
+    addQuantity = (index) => {
+        const newData = [...this.state.checkOut]
+        newData[index].quantity += 1
+        this.setState({ checkOut: newData })
+        let dataCal = 0
+        for (let i = 0; i < newData.length; i++) {
+            dataCal += newData[i].price * newData[i].quantity
+        }
+        this.setState({ total: dataCal })
     }
 
     render() {
@@ -136,19 +149,20 @@ class Shopping extends Component {
                             </div>)}
                         </div>}
                     </div>
-                    <div>
+                    {this.state.checkOut.length>0 &&<div>
                         <h2>CheckOut</h2>
-                        {this.state.checkOut.map((el, index) => <div className="checkoutOuter">
+                         {this.state.checkOut.map((el, index) => <div className="checkoutOuter" key={index + 1}>
                             <div className="checkOutLeft">
                                 <img src={el.image} />
                                 <div>{el.title}</div>
                             </div>
-                            <div className="checkOutQuantity" style={{ display: 'flex' }}>
-                                <button onClick={() => this.setState({valPrice:this.state.valPrice+1})}>+</button>
-                                <div style={{ width: "30px",paddingLeft:"5px" }} >{this.state.valPrice}</div>
-                            </div>
+
                             <div className="checkOutRight" >
-                                <div>${el.price * this.state.valPrice}</div>
+                                <div className="checkOutQuantity" style={{ display: 'flex'}}>
+                                    <button onClick={() => this.addQuantity(index)}>+</button>
+                                    <div style={{ width: "20px", paddingLeft: "5px" }} >{el.quantity}</div>
+                                </div>
+                                <div>${el.price * el.quantity}</div>
                                 <Button icon={<DeleteFilled style={{ fontSize: '20px' }} />} style={{ color: 'maroon', background: 'white', border: 'none' }} onClick={() => this.deleteItem(index)}></Button>
                             </div>
                         </div>)}
@@ -156,7 +170,11 @@ class Shopping extends Component {
                             <div>Total</div>
                             <div>${this.state.total}</div>
                         </div>
-                    </div>
+                    </div>}
+                    {this.state.checkOut.length <= 0 && <div>
+                        <h2>CheckOut</h2>
+                        <p>You have no checkout items. Checkout our new promotions!</p>
+                    </div>}
                 </div>
                 <footer></footer>
             </div>
