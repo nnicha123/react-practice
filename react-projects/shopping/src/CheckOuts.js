@@ -1,49 +1,34 @@
-import React,{Component} from 'react'
+import React from 'react'
 import './CheckOut.css'
 import { Button } from 'antd'
 import { DeleteFilled } from '@ant-design/icons';
 
-class CheckOuts extends Component {
-    
-    state = {
-        checkoutItems:[]
-    }
-    
+function CheckOuts(props) {
 
-    componentDidUpdate(prevProps, prevState) {
-        if (this.props.items !== this.state.checkoutItems) {
-          this.setState({checkoutItems:this.props.items})
-          console.log('updated')
-        }
-      }
-
-     deleteItem = (indx) => {
-        // const newItems = [...props.items]
-        // const newList = newItems.map((el,index) => index !== indx)
-        // props.items = newList
-    }
-    render(){
-        return (
-            <div>
-                <h2>CheckOut</h2>
-                {this.props.items.map((el,index) => <div className="checkoutOuter">
-                    <div className="checkOutLeft">
-                        <img src={el.image} />
-                        <div>{el.title}</div>
-                    </div>
-                    <div className="checkOutRight" >
-                        <div>${el.price}</div>
-                        <Button icon={<DeleteFilled style={{ fontSize: '20px' }} />} style={{ color: 'maroon', background: 'white', border: 'none' }} onClick={() => this.deleteItem(index)}></Button>
-                    </div>
-                </div>)}
-                <div className="totalPrice">
-                    <div>Total</div>
-                    <div>${this.props.totalCheckout}</div>
+    return (
+        <div style={{marginLeft:'15px',marginTop:'10px'}}>
+            <h2>CheckOut</h2>
+            {props.checkOut.map((el, index) => <div className="checkoutOuter" key={index + 1}>
+                <div className="checkOutLeft">
+                    <img src={el.image} />
+                    <div>{el.title}</div>
                 </div>
+
+                <div className="checkOutRight" >
+                    <div className="checkOutQuantity" style={{ display: 'flex' }}>
+                        <button onClick={() => props.addQuantity(index)}>+</button>
+                        <div style={{ width: "20px", paddingLeft: "5px" }} >{el.quantity}</div>
+                    </div>
+                    <div>${el.price * el.quantity}</div>
+                    <Button icon={<DeleteFilled style={{ fontSize: '20px' }} />} style={{ color: 'maroon', background: 'white', border: 'none' }} onClick={() => props.deleteItem(index)}></Button>
+                </div>
+            </div>)}
+            <div className="totalPrice">
+                <div>Total</div>
+                <div>${props.total}</div>
             </div>
-        )
-    }
-    
+        </div>
+    )
 }
 
 export default CheckOuts
