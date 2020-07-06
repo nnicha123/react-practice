@@ -16,10 +16,11 @@ function CheckOuts(props) {
 
                 <div className="checkOutRight" >
                     <div className="checkOutQuantity" style={{ display: 'flex' }}>
-                        <button onClick={() => props.addQuantity(index)}>+</button>
-                        <div style={{ width: "20px", paddingLeft: "5px" }} >{el.quantity}</div>
+                        <button className="quanButton" style={{marginLeft:'10px'}} onClick={() => props.addQuantity(index)}>+</button>
+                        <div style={{ width: "15px", paddingLeft: "5px" }} >{el.quantity}</div>
+                        <button className="quanButton" onClick={() => props.deleteQuantity(index)}>-</button>
                     </div>
-                    <div>${el.price * el.quantity}</div>
+                    <div style={{marginLeft:'10px'}}>${el.price * el.quantity}</div>
                     <Button icon={<DeleteFilled style={{ fontSize: '20px' }} />} style={{ color: 'maroon', background: 'white', border: 'none' }} onClick={() => props.deleteItem(index)}></Button>
                 </div>
             </div>)}

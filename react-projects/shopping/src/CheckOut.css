@@ -32,6 +32,12 @@
 .checkOutRight{
     font-weight: bold;
     display: flex;
-    width: 115px;
+    width: 125px;
     justify-content: space-between;
+}
+.quanButton{
+    border: none;
+    background: white;
+    background-color: maroon;
+    color: white;
 }

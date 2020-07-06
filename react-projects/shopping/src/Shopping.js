@@ -61,11 +61,19 @@ class Shopping extends Component {
         this.setState({ checkOut: [...this.state.checkOut, newItem] })
         this.setState({ total: this.state.total + this.state.cakes[ind].price })
     }
+    updateFav = (ind) => {
+        let newItem = this.state.cakes[ind]
+        this.setState({favourite:[...this.state.favourite, newItem]})
+    }
     updateCheckoutGames = (ind) => {
         let newItem = this.state.games[ind]
         newItem.quantity = 1
         this.setState({ checkOut: [...this.state.checkOut, newItem] })
         this.setState({ total: this.state.total + this.state.games[ind].price })
+    }
+    updateFavGames = (ind) => {
+        let newItem = this.state.games[ind]
+        this.setState({favourite:[...this.state.favourite, newItem]})
     }
     updateCheckoutBags = (ind) => {
         let newItem = this.state.bags[ind]
@@ -73,10 +81,18 @@ class Shopping extends Component {
         this.setState({ checkOut: [...this.state.checkOut, newItem] })
         this.setState({ total: this.state.total + this.state.bags[ind].price })
     }
+    updateFavBags = (ind) => {
+        let newItem = this.state.bags[ind]
+        this.setState({favourite:[...this.state.favourite, newItem]})
+    }
     deleteItem = (ind) => {
         const newList = [...this.state.checkOut].filter((el, index) => index !== ind)
         this.setState({ checkOut: [...newList] })
-        this.setState({ total: this.state.total - this.state.checkOut[ind].price*this.state.checkOut[ind].quantity })
+        this.setState({ total: this.state.total - this.state.checkOut[ind].price * this.state.checkOut[ind].quantity })
+    }
+    deleteFav = (ind) => {
+        const newFav = [...this.state.favourite].filter((el,index) => index !== ind)
+        this.setState({favourite:[...newFav]})
     }
     addQuantity = (index) => {
         const newData = [...this.state.checkOut]
@@ -87,6 +103,19 @@ class Shopping extends Component {
             dataCal += newData[i].price * newData[i].quantity
         }
         this.setState({ total: dataCal })
+    }
+    deleteQuantity = (index) => {
+        const newData = [...this.state.checkOut]
+        if(newData[index].quantity > 1){
+            newData[index].quantity -= 1
+            this.setState({ checkOut: newData })
+            let dataCal = 0
+            for (let i = 0; i < newData.length; i++) {
+                dataCal += newData[i].price * newData[i].quantity
+            }
+            this.setState({ total: dataCal })
+        }
+       
     }
 
     render() {
@@ -104,15 +133,22 @@ class Shopping extends Component {
                 <div className="content">
                     <div className="content-left">
                         <h2>Shopping Items</h2>
-                        {this.state.components[0] && <Cakes cakes={this.state.cakes} newCheckOut={this.updateCheckout}/>}
-                        {this.state.components[1] && <Games games={this.state.games} newCheckOut={this.updateCheckoutGames}/>}
-                        {this.state.components[2] && <Bags bags={this.state.bags} newCheckOut={this.updateCheckoutBags}/>}
+                        {this.state.components[0] && <Cakes cakes={this.state.cakes} newCheckOut={this.updateCheckout} newFav={this.updateFav}/>}
+                        {this.state.components[1] && <Games games={this.state.games} newCheckOut={this.updateCheckoutGames} newFav={this.updateFavGames}/>}
+                        {this.state.components[2] && <Bags bags={this.state.bags} newCheckOut={this.updateCheckoutBags} newFav={this.updateFavBags}/>}
                     </div>
-                    {this.state.checkOut.length>0 && <CheckOuts checkOut={this.state.checkOut} addQuantity={this.addQuantity} deleteItem={this.deleteItem} total={this.state.total}/>}
-                    {this.state.checkOut.length <= 0 && <div style={{marginLeft:'15px',marginTop:'10px'}}>
-                        <h2>CheckOut</h2>
-                        <p>You have no checkout items. Checkout our new promotions!</p>
-                    </div>}
+                    <div className="content-right">
+                        {this.state.checkOut.length>0 && <CheckOuts checkOut={this.state.checkOut} addQuantity={this.addQuantity} deleteQuantity={this.deleteQuantity} deleteItem={this.deleteItem} total={this.state.total} />}
+                        {this.state.checkOut.length<= 0 && <div style={{ marginLeft: '15px', marginTop: '10px' }}>
+                            <h2>CheckOut</h2>
+                            <p>You have no checkout items. Checkout our new promotions!</p>
+                        </div>}
+                        {this.state.favourite.length > 0 && <Favourites favourite={this.state.favourite} deleteFav={this.deleteFav}/>}
+                        {this.state.favourite.length<= 0 && <div style={{ marginLeft: '15px', marginTop: '10px' }}>
+                            <h2>Favourites</h2>
+                            <p>You have no favourite item yet!</p>
+                        </div>}
+                    </div>
                 </div>
                 <footer></footer>
             </div>

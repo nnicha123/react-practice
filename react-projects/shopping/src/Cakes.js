@@ -15,7 +15,7 @@ function Cakes(props) {
                 <div className="cardBottom">
                     <div>${el.price}</div>
                     <div className="cardDivRight">
-                        <Button icon={<HeartFilled style={{ fontSize: '20px' }} />} style={{ color: 'maroon', background: 'white', border: 'none' }} ></Button>
+                        <Button icon={<HeartFilled style={{ fontSize: '20px' }} />} style={{ color: 'maroon', background: 'white', border: 'none' }} onClick={() => props.newFav(index)}></Button>
                         <Button icon={<ShoppingFilled style={{ fontSize: '20px' }} />} style={{ color: 'maroon', background: 'white', border: 'none' }} onClick={() => props.newCheckOut(index)}></Button>
                     </div>
                 </div>
