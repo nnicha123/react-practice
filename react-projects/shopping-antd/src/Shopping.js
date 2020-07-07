@@ -55,42 +55,52 @@ class Shopping extends Component {
         favourite: [],
         components: [true, true, true],
         total: 0,
+        title: [],
+        titleFav: []
     }
 
     updateCheckout = (ind) => {
         let newItem = this.state.cakes[ind]
-        newItem.quantity = 1
-        this.setState({ checkOut: [...this.state.checkOut, newItem], total: this.state.total + this.state.cakes[ind].price })
+        if (this.state.title.indexOf(newItem.title) < 0) {
+            newItem.quantity = 1
+            this.setState({ checkOut: [...this.state.checkOut, newItem], total: this.state.total + newItem.price, title: [...this.state.title,newItem.title] })
+        }
     }
     updateFav = (ind) => {
         let newItem = this.state.cakes[ind]
-        this.setState({ favourite: [...this.state.favourite, newItem] })
+        if(this.state.titleFav.indexOf(newItem.title) < 0) this.setState({ favourite: [...this.state.favourite, newItem],titleFav:[...this.state.titleFav,newItem.title] })
     }
     updateCheckoutGames = (ind) => {
         let newItem = this.state.games[ind]
-        newItem.quantity = 1
-        this.setState({ checkOut: [...this.state.checkOut, newItem], total: this.state.total + this.state.games[ind].price })
+        if (this.state.title.indexOf(newItem.title) < 0) {
+            newItem.quantity = 1
+            this.setState({ checkOut: [...this.state.checkOut, newItem], total: this.state.total + newItem.price, title: [...this.state.title,newItem.title] })
+        }
     }
     updateFavGames = (ind) => {
         let newItem = this.state.games[ind]
-        this.setState({ favourite: [...this.state.favourite, newItem] })
+        if(this.state.titleFav.indexOf(newItem.title) < 0) this.setState({ favourite: [...this.state.favourite, newItem],titleFav:[...this.state.titleFav,newItem.title] })
     }
     updateCheckoutBags = (ind) => {
         let newItem = this.state.bags[ind]
-        newItem.quantity = 1
-        this.setState({ checkOut: [...this.state.checkOut, newItem], total: this.state.total + this.state.bags[ind].price })
+        if (this.state.title.indexOf(newItem.title) < 0) {
+            newItem.quantity = 1
+            this.setState({ checkOut: [...this.state.checkOut, newItem], total: this.state.total + newItem.price, title: [...this.state.title,newItem.title] })
+        }
     }
     updateFavBags = (ind) => {
         let newItem = this.state.bags[ind]
-        this.setState({ favourite: [...this.state.favourite, newItem] })
+        if(this.state.titleFav.indexOf(newItem.title) < 0) this.setState({ favourite: [...this.state.favourite, newItem],titleFav:[...this.state.titleFav,newItem.title] })
     }
     deleteItem = (ind) => {
         const newList = [...this.state.checkOut].filter((el, index) => index !== ind)
-        this.setState({ checkOut: [...newList], total: this.state.total - this.state.checkOut[ind].price * this.state.checkOut[ind].quantity })
+        const newListTitle = newList.map(el => el.title)
+        this.setState({ checkOut: [...newList], total: this.state.total - this.state.checkOut[ind].price * this.state.checkOut[ind].quantity,title:newListTitle })
     }
     deleteFav = (ind) => {
         const newFav = [...this.state.favourite].filter((el, index) => index !== ind)
-        this.setState({ favourite: [...newFav] })
+        const newFavTitle = newFav.map(el => el.title)
+        this.setState({ favourite: [...newFav],titleFav:newFavTitle })
     }
     addQuantity = (index) => {
         const newData = [...this.state.checkOut]
@@ -143,7 +153,7 @@ class Shopping extends Component {
                         </Col>
                     </Row>
                 </Content>
-                <Footer style={{ textAlign: 'center', background: '#001529', color: 'white',padding:'30px',display:'flex',justifyContent:'center',alignItems:'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+                <Footer style={{ textAlign: 'center', background: '#001529', color: 'white', padding: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
             </div>
         )
     }
