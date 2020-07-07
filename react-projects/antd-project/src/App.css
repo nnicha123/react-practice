@@ -2,7 +2,9 @@
   text-align: center;
 }
 
-
+Button{
+  background: white;
+}
 Button:hover{
   opacity: 0.6;
   background: maroon;
