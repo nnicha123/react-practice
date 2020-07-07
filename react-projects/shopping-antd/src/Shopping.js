@@ -114,7 +114,7 @@ class Shopping extends Component {
             <div>
                 <Header>
                     <div className="logo" />
-                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
                         <Menu.Item key="1" onClick={() => this.setState({ components: [true, true, true] })}>All</Menu.Item>
                         <Menu.Item key="2" onClick={() => this.setState({ components: [false, false, true] })}>Bags</Menu.Item>
                         <Menu.Item key="3" onClick={() => this.setState({ components: [true, false, false] })}>Cakes</Menu.Item>
