@@ -12,6 +12,7 @@ import IdleTimerTest from './IdleTimerTest';
 import ColorPicker from './ColorPicker';
 import CreditCards from './CreditCards';
 import DatePicker from './DatePicker';
+import MDSdeck from './MDSdeck';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path='/color-picker' component={ColorPicker} />
           <Route path='/credit-cards' component={CreditCards} />
           <Route path='/date-picker' component={DatePicker} />
+          <Route path='/mdx-deck' component={MDSdeck} />
         </Switch>
       </div>
     </Router>

@@ -33,6 +33,9 @@ function Nav() {
         <Link to='/date-picker'>
           <li>Date Picker</li>
         </Link>
+        <Link to='/mdx-deck'>
+          <li>MDX Deck</li>
+        </Link>
       </ul>
     </nav>
   )
