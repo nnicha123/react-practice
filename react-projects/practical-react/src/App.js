@@ -12,7 +12,9 @@ import IdleTimerTest from './IdleTimerTest';
 import ColorPicker from './ColorPicker';
 import CreditCards from './CreditCards';
 import DatePicker from './DatePicker';
-import MDSdeck from './MDSdeck';
+import VideoPlayer from './VideoPlayer';
+import Loading from './Loading';
+import Charts from './Charts'
 
 
 function App() {
@@ -31,7 +33,9 @@ function App() {
           <Route path='/color-picker' component={ColorPicker} />
           <Route path='/credit-cards' component={CreditCards} />
           <Route path='/date-picker' component={DatePicker} />
-          <Route path='/mdx-deck' component={MDSdeck} />
+          <Route path='/video-player' component={VideoPlayer} />
+          <Route path='/loading' component={Loading} />
+          <Route path='/chars' component={Charts} />
         </Switch>
       </div>
     </Router>

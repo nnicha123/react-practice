@@ -33,8 +33,14 @@ function Nav() {
         <Link to='/date-picker'>
           <li>Date Picker</li>
         </Link>
-        <Link to='/mdx-deck'>
-          <li>MDX Deck</li>
+        <Link to='/video-player'>
+          <li>Video Player</li>
+        </Link>
+        <Link to='/loading'>
+          <li>Spinners</li>
+        </Link>
+        <Link to='/chars'>
+          <li>Charts</li>
         </Link>
       </ul>
     </nav>
