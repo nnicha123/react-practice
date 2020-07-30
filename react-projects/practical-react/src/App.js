@@ -7,6 +7,8 @@ import TippyTest from './TippyTest';
 import Nav from './Nav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Home';
+import CountupTest from './CountupTest';
+import IdleTimerTest from './IdleTimerTest';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
           <Route path='/react-toast' component={ToastNotifications} />
           <Route path='/react-tippy' component={TippyTest} />
           <Route path='/react-modal' component={ModalTest} />
+          <Route path='/react-countup' component={CountupTest} />
+          <Route path='/idle-timer' component={IdleTimerTest} />
         </Switch>
       </div>
     </Router>

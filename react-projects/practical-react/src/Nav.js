@@ -7,16 +7,22 @@ function Nav() {
     <nav>
       <ul>
         <Link to="/react-icons">
-          <li>React Icons</li>
+          <li>Icons</li>
         </Link>
         <Link to="/react-toast">
-          <li>React Toast</li>
+          <li>Toast</li>
         </Link>
         <Link to="/react-tippy">
-          <li>React Tippy</li>
+          <li>Tippy</li>
         </Link>
         <Link to="/react-modal">
-          <li>React Modal</li>
+          <li>Modal</li>
+        </Link>
+        <Link to="/react-countup">
+          <li>Countup</li>
+        </Link>
+        <Link to='/idle-timer'>
+          <li>Idle Timer</li>
         </Link>
       </ul>
     </nav>
