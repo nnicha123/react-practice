@@ -30,6 +30,9 @@ function Nav() {
         <Link to='/credit-cards'>
           <li>Credit Cards</li>
         </Link>
+        <Link to='/date-picker'>
+          <li>Date Picker</li>
+        </Link>
       </ul>
     </nav>
   )

@@ -11,6 +11,7 @@ import CountupTest from './CountupTest';
 import IdleTimerTest from './IdleTimerTest';
 import ColorPicker from './ColorPicker';
 import CreditCards from './CreditCards';
+import DatePicker from './DatePicker';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/idle-timer' component={IdleTimerTest} />
           <Route path='/color-picker' component={ColorPicker} />
           <Route path='/credit-cards' component={CreditCards} />
+          <Route path='/date-picker' component={DatePicker} />
         </Switch>
       </div>
     </Router>
