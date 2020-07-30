@@ -24,6 +24,12 @@ function Nav() {
         <Link to='/idle-timer'>
           <li>Idle Timer</li>
         </Link>
+        <Link to='/color-picker'>
+          <li>Color Picker</li>
+        </Link>
+        <Link to='/credit-cards'>
+          <li>Credit Cards</li>
+        </Link>
       </ul>
     </nav>
   )
